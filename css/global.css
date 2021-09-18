@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+:root {
+    --ff-logo:'Limelight', sans-serif;
+    --ff-text:'Arial Narrow', sans-serif;
+
+    --color-accent: #750404;
+    --color-hover: #3d0202;
+    --color-activate:#F50707;
+    --light: #ffffff;
+    --background:#fafafa;
+    --gray:#b4b2b2;
+}
+
+html {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background);
+    margin: 0 auto;
+}
+
+section{
+    margin:10px;
+}
+
+.navbar-brand {
+    font-family: var(--ff-logo);
+}
+
+
+
+a {
+    text-decoration: none;
+    color:var(--light);
+}
+
+
+.badge {
+ background: var(--gray);
+}
+
+li {
+    list-style: none;
+}
+
+.card{
+    width: 18rem;
+}
+
+/* Menu principal */
+
+.header{
+    background-color: var(--color-accent);
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+    font-size: small;
+    color:white;   
+}
+
+.form-inline i{
+    position: absolute;
+    margin: -20px auto;
+    color: var(--gray)
+}
+
+/*Rodapé*/
+
+footer{
+    background-color: var(--color-accent);
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    padding:10px;
+    font-size: small;
+    color:white;   
+  }
+  
