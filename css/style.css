@@ -1,3 +1,13 @@
+/* Carousel */
+#home {
+    background-color: var(--color-accent);
+}
+
+/* Avaliações */
+#avaliacoes {
+    background-color: var(--light);
+}
+
 /* Botões de Mais e Badges */
 .btn-more, 
 .badge {
