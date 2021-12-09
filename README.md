@@ -1,4 +1,4 @@
-# Desenvolvimento Web 
+# Pipocando em Casa
 
 <img src="img/Logo.png" width="146" align="right" /> Esse repositório é referente ao primeiro trabalho da disciplina Desenvolvimento de Interfaces WEB, na PUC Minas, que consiste em criar site de filmes com *wireframe* preestabelecido. As cores, imagens, vídeos e alguns efeitos da página principal foram realizados por procura pessoal, pois gostaria de uma melhor apresentação.
 
