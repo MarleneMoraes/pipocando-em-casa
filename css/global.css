@@ -53,3 +53,8 @@ section {
 footer {
 	background: var(--color-accent);
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+}

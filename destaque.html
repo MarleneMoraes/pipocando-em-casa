@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/styleDestaque.css">
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
   <title>Pipocando em Casa | Em Destaque</title>
 </head>
@@ -18,48 +18,46 @@
 
   <header>
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand text-light" href="index.html">
-            <img src="img/logo.png" width="40">Pipocando em Casa
-        </a>
-        <button class="navbar-toggler text-light" type="button" data-toggle="collapse"
-            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <i class="fas fa-bars text-light"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link text-light">Lançamentos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="destaque.html" class="nav-link text-light">Em Destaque</a>
-                </li>
-                <li class="nav-item">
-                    <a href="avaliacoes.html" class="nav-link text-light">Avaliações</a>
-                </li>
-                <li class="nav-item">
-                    <a href="making of.html" class="nav-link text-light">Entrevistas & Making Of</a>
-                </li>
-                <li class="nav-item">
-                    <a href="novidades.html" class="nav-link text-light">Novidades</a>
-                </li>
+        <div class="d-flex justify-content-between">
+          <div class="logo">
+            <a class="navbar-brand text-light" href="index.html">
+              <img src="img/logo.png" width="40">Pipocando em Casa
+            </a>
+            <button class="navbar-toggler text-light" type="button" data-toggle="collapse"
+              data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <i class="fas fa-bars text-light"></i>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 d-flex justify-content-end">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-light">Lançamentos</a>
+              </li>
+              <li class="nav-item">
+                <a href="destaque.html" class="nav-link text-light">Em Destaque</a>
+              </li>
+              <li class="nav-item">
+                <a href="avaliacoes.html" class="nav-link text-light">Avaliações</a>
+              </li>
+              <li class="nav-item">
+                <a href="making of.html" class="nav-link text-light">Entrevistas & Making Of</a>
+              </li>
+              <li class="nav-item">
+                <a href="novidades.html" class="nav-link text-light">Novidades</a>
+              </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i
-                        class="fa fa-search"></i></button>
-            </form>
+          </div>
         </div>
     </nav>
-</header>
+  </header>
 
 
 
   <section id="destaque">
     <div class="container">
+      <h2 class="display-8">Em Destaque</h2>
       <div class="mb-3 d-flex justify-content-between">
-        <h2 class="display-8">Em Destaque</h2>
         <select class="custom-select col-md-2">
           <option selected>Categoria: TODOS</option>
           <option value="1">Aventura</option>
@@ -69,8 +67,13 @@
           <option value="5">Suspense</option>
           <option value="6">Terror</option>
         </select>
+        <form class="form-inline my-2 my-lg-0">
+          <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="O que você procura?">
+          <button class="btn btn-search my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+        </form>
       </div>
       <div class="row">
+
         <div class="col-md-3">
           <img src="img/destaque1.jpg" class="img-fluid">
           <div class="card-body mt-1 p-2">
