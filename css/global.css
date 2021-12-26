@@ -32,6 +32,22 @@ section {
     font-family: var(--ff-logo);
 }
 
+/* Botão de Pesquisa*/
+.btn-search {
+    background-color: var(--color-accent);
+    color: var(--light);
+}
+
+.btn-search:hover{
+    background-color: var(--color-hover);
+    color: var(--light);
+}
+
+.btn-search:active{
+    background-color: var(--color-active);
+    color: var(--light);
+}
+
 /* Botão Voltar */
 .btn-back {
     background-color: var(--color-accent);
