@@ -18,37 +18,37 @@
 
   <header>
     <nav class="navbar navbar-expand-lg">
-        <div class="d-flex justify-content-between">
-          <div class="logo">
-            <a class="navbar-brand text-light" href="index.html">
-              <img src="img/logo.png" width="40">Pipocando em Casa
-            </a>
-            <button class="navbar-toggler text-light" type="button" data-toggle="collapse"
-              data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <i class="fas fa-bars text-light"></i>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 d-flex justify-content-end">
-              <li class="nav-item">
-                <a href="index.html" class="nav-link text-light">Lançamentos</a>
-              </li>
-              <li class="nav-item">
-                <a href="destaque.html" class="nav-link text-light">Em Destaque</a>
-              </li>
-              <li class="nav-item">
-                <a href="avaliacoes.html" class="nav-link text-light">Avaliações</a>
-              </li>
-              <li class="nav-item">
-                <a href="making of.html" class="nav-link text-light">Entrevistas & Making Of</a>
-              </li>
-              <li class="nav-item">
-                <a href="novidades.html" class="nav-link text-light">Novidades</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <a class="navbar-brand text-light" href="index.html">
+        <img src="./img/logo.png" width="40">Pipocando em Casa
+      </a>
+      <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-light"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mt-2 ml-auto mr-auto  mt-lg-0 ">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link text-light">Lançamentos</a>
+          </li>
+          <li class="nav-item">
+            <a href="destaque.html" class="nav-link text-light">Em Destaque</a>
+          </li>
+          <li class="nav-item">
+            <a href="avaliacoes.html" class="nav-link text-light">Avaliações</a>
+          </li>
+          <li class="nav-item">
+            <a href="making of.html" class="nav-link text-light">Entrevistas & Making Of</a>
+          </li>
+          <li class="nav-item">
+            <a href="novidades.html" class="nav-link text-light">Novidades</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-search my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
     </nav>
   </header>
 
@@ -57,7 +57,7 @@
   <section id="destaque">
     <div class="container">
       <h2 class="display-8">Em Destaque</h2>
-      <div class="mb-3 d-flex justify-content-between">
+      <div class="mb-3 d-flex justify-content-between flex-wrap">
         <select class="custom-select col-md-2">
           <option selected>Categoria: TODOS</option>
           <option value="1">Aventura</option>
