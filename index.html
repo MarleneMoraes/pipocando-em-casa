@@ -10,7 +10,8 @@
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/MarleneMoraes/pipocando-em-casa/main/img/Logo.png"
+    type="image/x-icon">
   <title>Pipocando em Casa | Assista seus filmes favoritos</title>
 </head>
 
@@ -19,7 +20,8 @@
   <header>
     <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand text-light" href="index.html">
-        <img src="./img/logo.png" width="40">Pipocando em Casa
+        <img src="https://raw.githubusercontent.com/MarleneMoraes/pipocando-em-casa/main/img/Logo.png"
+          width="40">Pipocando em Casa
       </a>
       <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarToggler"
         aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -138,6 +140,7 @@
                 </div>
               </div>
             </div>
+
             <div class="carousel-item">
               <div class="d-flex justify-content-between">
                 <div class="col-sm-12 col-md-12 col-lg-9">
@@ -216,8 +219,8 @@
     <div class="container">
       <div class="mb-3 d-flex justify-content-between">
         <h2 class="display-8">Em Destaque</h2>
-        <select class="custom-select col-md-2">
-          <option selected>Categoria: TODOS</option>
+        <select id="theme" class="custom-select col-md-2">
+          <option value="" selected>Categoria: TODOS</option>
           <option value="1">Aventura</option>
           <option value="2">Ação</option>
           <option value="3">Comédia</option>
@@ -226,7 +229,7 @@
           <option value="6">Terror</option>
         </select>
       </div>
-      <div class="row">
+      <div id="film" class="row">
         <div class="col-md-3">
           <img src="img/destaque1.jpg" class="img-fluid">
           <div class="card-body mt-1 p-2">
@@ -516,9 +519,11 @@
     </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+
+  <script src="./js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
