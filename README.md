@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/MarleneMoraes/pipocando-em-casa/main/img/Logo.png" width="146" align="right" /> Esse repositório é referente ao primeiro trabalho da disciplina Desenvolvimento de Interfaces WEB, na PUC Minas, que consiste em criar site de filmes com *wireframe* preestabelecido. As cores, imagens, vídeos e alguns efeitos da página principal foram realizados por procura pessoal, pois gostaria de uma melhor apresentação.
 
-O site pode ser visualizado neste <a href="https://marlenemoraes.github.io/pipocando-em-casa">aqui</a>
+O site pode ser visualizado neste [aqui](https://marlenemoraes.github.io/pipocando-em-casa)
 
 ## Objetivos
 Realizar uma landing page do zero de criar um site de filmes com consumo em API jQuery. 
