@@ -5,7 +5,7 @@ import { HighlightsComponent } from './components/views/highlights/highlights.co
 import { HomeComponent } from './components/views/home/home.component';
 import { MakingOfComponent } from './components/views/making-of/making-of.component';
 import { NewsComponent } from './components/views/news/news.component';
-import { RealeasesViewComponent } from './components/views/realeases-view/realeases-view.component';
+import { RealeasesComponent } from './components/views/realeases/realeases.component';
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'realeases',
-    component: RealeasesViewComponent
+    component: RealeasesComponent
   },
   {
     path: 'highlights',

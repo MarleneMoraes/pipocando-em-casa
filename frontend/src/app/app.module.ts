@@ -9,20 +9,20 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { HeaderComponent } from './components/template/header/header.component';
 
 import { HomeComponent } from './components/views/home/home.component';
-import { RealeasesViewComponent } from './components/views/realeases-view/realeases-view.component';
 import { HighlightsComponent } from './components/views/highlights/highlights.component';
 import { MakingOfComponent } from './components/views/making-of/making-of.component';
 import { NewsComponent } from './components/views/news/news.component';
+import { RealeasesComponent } from './components/views/realeases/realeases.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomeComponent,
-    RealeasesViewComponent,
     HighlightsComponent,
     MakingOfComponent,
     NewsComponent,
+    RealeasesComponent,
 
   ],
   imports: [HeaderComponent,
