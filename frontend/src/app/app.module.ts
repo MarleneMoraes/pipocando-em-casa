@@ -13,6 +13,7 @@ import { HighlightsComponent } from './components/views/highlights/highlights.co
 import { MakingOfComponent } from './components/views/making-of/making-of.component';
 import { NewsComponent } from './components/views/news/news.component';
 import { RealeasesComponent } from './components/views/realeases/realeases.component';
+import { ReturnButtonComponent } from './components/return-button/return-button.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RealeasesComponent } from './components/views/realeases/realeases.compo
     MakingOfComponent,
     NewsComponent,
     RealeasesComponent,
+    ReturnButtonComponent,
 
   ],
   imports: [HeaderComponent,
