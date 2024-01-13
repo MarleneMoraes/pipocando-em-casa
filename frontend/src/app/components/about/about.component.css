@@ -1,0 +1,13 @@
+.social-media {
+  color: var(--color-accent);
+  transition: all 0.4s ease-out;
+}
+
+.social-media:hover {
+  color: var(--color-hover);
+  transform: translateY(-10px);
+}
+
+.social-media:active {
+  color: var(--color-active);
+}

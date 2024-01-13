@@ -1,0 +1,17 @@
+<aside class="card mt-5 p-5 col-md-4">
+
+  <h2>Sobre</h2>
+  <p class="text-justify" *ngFor="let text for aboutTexts">{{text}}</p>
+  <hr>
+  <h2>Editorial</h2>
+  <p class="m-3" *ngFor="let editor for editors">
+    <i class="bi bi-person" style="font-size: 2rem;"></i>&nbsp;
+    <b>{{editor.position}}</b> {{editor.name}}
+  </p>
+
+  <div class="d-flex justify-content-center">
+    <a class="m-3" href="{{socialMedia.path}}" target="_blank" *ngFor="let socialMedia for socialMedias">
+      <i class="{{socialMedia.class}}"></i>
+    </a>
+  </div>
+</aside>

@@ -15,6 +15,7 @@ import { NewsComponent } from './components/views/news/news.component';
 import { RealeasesComponent } from './components/views/realeases/realeases.component';
 import { ReturnButtonComponent } from './components/return-button/return-button.component';
 import { NewsCardComponent } from './components/cards/news-card/news-card.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NewsCardComponent } from './components/cards/news-card/news-card.compon
     RealeasesComponent,
     ReturnButtonComponent,
     NewsCardComponent,
+    AboutComponent,
 
   ],
   imports: [HeaderComponent,
