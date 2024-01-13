@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fonts and color variables */
+:root {
+    --ff-logo:'Century Gothic', sans-serif;
+    --ff-text:'Arial Narrow', sans-serif;
+
+    --color-accent: #8b0000;
+    --color-hover: #740101;
+    --color-active:#F50707;
+    --light: #ffffff;
+    --background:#fafafa;
+    --gray:#f0eeee;
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background);
+}
+
+section {
+	padding:40px 0;
+	border-bottom: none;
+}
+
+.text-logo {
+    font-family: var(--ff-logo);
+}
