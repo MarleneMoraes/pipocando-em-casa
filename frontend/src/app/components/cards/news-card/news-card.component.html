@@ -1,0 +1,19 @@
+<div class="row g-0 mb-4" *ngFor="let article of articles; let i=index">
+  <div class="col-sm-12 col-md-12 col-lg-4">
+    <img height="100%" src="{{article.image}}" class="card-img" alt="">
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-8">
+    <br class="card-body">
+      <h5 class="title-news card-title">
+        <a routerLink="{{article.path}}">
+        {{article.title}}</a>
+      </h5>
+      <h6 class="card-subtitle text-muted">{{article.subtitle}}</h6>
+      <p class="card-text text-justify" *ngFor="let text of article.texts"></p>
+
+      <small class="card-subtitle text-muted">{{article.obs}}</small>
+      <br/>
+
+      <h5 class="badge" *ngFor="let badge of article.badges">{{badge}}</h5>
+    </div>
+  </div>
