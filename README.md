@@ -11,5 +11,4 @@ Realizar uma landing page do zero de criar um site de filmes com consumo em API 
 Este projeto foi feito em menos de 2 meses devido a entrega limitada e foi o meu primeiro site criado. Com o projeto fora de prazo, senti-me na obrigação de recriá-lo do zero, me desafiando a utilizar uma ferramenta que tanto tive dificuldade em utilizar — no caso, o Bootstrap — e gerar funcionalidade em JavaScript, visto que ela não o tinha. Apesar dos professores não exigirem a navegação entre páginas e nem as páginas internas, eu as criei para uma melhor experiência de quem está visualizando o conteúdo criado.
 Acredito que alcancei um resultado satisfatório entre a primeira e a segunda versão, ainda em andamento referente ao consumo de API.
 
-> Status do projeto: Em Andamento :pencil:
-
+> Status do projeto: Concluído :heavy_check_mark:
