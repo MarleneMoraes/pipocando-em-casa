@@ -30,12 +30,21 @@ export class AboutComponent {
       path: 'https://www.facebook.com',
       class: 'bi bi-facebook social-media'
     },
-    { path: 'https://www.instagram.com', class: 'bi bi-instagram social-media' },
-    { path: 'https://www.twitter.com', class: 'bi bi-twitter social-media' },
-    { path: 'https://www.linkedin.com', class: 'bi bi-linkedin social-media' },
-    { path: 'https://www.youtube.com', class: 'bi bi-youtube social-media' }
+    { 
+      path: 'https://www.instagram.com', 
+      class: 'bi bi-instagram social-media' 
+    },
+    { 
+      path: 'https://www.twitter.com', 
+      class: 'bi bi-twitter social-media'
+    },
+    { 
+      path: 'https://www.linkedin.com', 
+      class: 'bi bi-linkedin social-media' 
+    },
+    { 
+      path: 'https://www.youtube.com', 
+      class: 'bi bi-youtube social-media' 
+    }
   ]
-
-
-
 }
