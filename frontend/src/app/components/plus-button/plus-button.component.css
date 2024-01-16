@@ -1,0 +1,14 @@
+.btn-more {
+    background-color: var(--color-accent);
+    color: var(--light);
+}
+
+.btn-more:hover{
+    background-color: var(--color-hover);
+    color: var(--light);
+}
+
+.btn-more:active{
+    background-color: var(--color-active);
+    color: var(--light);
+}
