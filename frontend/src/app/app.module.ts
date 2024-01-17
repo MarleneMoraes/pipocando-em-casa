@@ -17,6 +17,9 @@ import { ReturnButtonComponent } from './components/return-button/return-button.
 import { NewsCardComponent } from './components/cards/news-card/news-card.component';
 import { AboutComponent } from './components/about/about.component';
 import { MakingofCardComponent } from './components/cards/makingof-card/makingof-card.component';
+import { HighlightCardComponent } from './components/cards/highlight-card/highlight-card.component';
+import { SelectComponent } from './components/select/select.component';
+import { FormSearchComponent } from './components/form-search/form-search.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { MakingofCardComponent } from './components/cards/makingof-card/makingof
     NewsCardComponent,
     AboutComponent,
     MakingofCardComponent,
+    HighlightCardComponent,
+    SelectComponent,
+    FormSearchComponent,
 
   ],
   imports: [HeaderComponent,

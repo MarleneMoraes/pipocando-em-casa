@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-between">
+  <div class="col-md-3 m-2" *ngFor="let film of films">
+    <img src="{{film.poster}}" class="img-fluid">
+    <div class="card-body mt-1 p-2">
+      <h4 class="card-title">{{film.title}}</h4>
+      <p class="card-text text-justify">
+        {{film.summary}}
+      </p>
+    </div>
+  </div>
+</div>
