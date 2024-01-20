@@ -1,11 +1,15 @@
-<div class="card" *ngFor="let article of articles; let i=index">
-    <div class="col-md-4">
-        <div class="card-img-top" [innerHTML]="article.iframe"></div>
-        <div class="card-body">
-            <h3 class="card-title">{{article.title}}</h3>
-            <p class="card-subtitle mb-2">Direção: {{article.direction}}</p>
-            <p class="card-subtitle mb-2">Roteiro: {{article.screenplay}}</p>
-            <p class="card-subtitle mb-2">Estreia: {{article.release}}</p>
-        </div>
-    </div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let article of articles; let i=index">
+      <div class="col-md-12">
+          <div class="card-img-top">
+            <iframe class="card-img-top" width="100%" height="60%" [src]="article.iframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+              <h3 class="card-title">{{article.title}}</h3>
+              <p class="card-subtitle mb-2">Direção: {{article.direction}}</p>
+              <p class="card-subtitle mb-2">Roteiro: {{article.screenplay}}</p>
+              <p class="card-subtitle mb-2">Estreia: {{article.release}}</p>
+          </div>
+      </div>
+  </div>
 </div>

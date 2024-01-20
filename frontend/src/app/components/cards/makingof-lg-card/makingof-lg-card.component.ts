@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-makingof-card',
-  templateUrl: './makingof-card.component.html',
-  styleUrls: ['./makingof-card.component.css']
+  selector: 'app-makingof-lg-card',
+  templateUrl: './makingof-lg-card.component.html',
+  styleUrls: ['./makingof-lg-card.component.css']
 })
-export class MakingofCardComponent {
-  articles: { iframe: SafeResourceUrl; title: string; direction: string; screenplay: string; release: string; }[] = [];
+export class MakingofLgCardComponent {
+  articles: { iframe: SafeResourceUrl; title: string; direction: string; screenplay: string; text: string; }[] = [];
 
   constructor(private sanitizer: DomSanitizer) { }
 
@@ -18,21 +18,14 @@ export class MakingofCardComponent {
         title: 'Enola Holmes',
         direction: 'Harry Bradbeer',
         screenplay: 'Jack Thorne',
-        release: '23/09/2020'
-      },
-      {
-        iframe: this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/GzF51d_N-uM'),
-        title: 'Power',
-        direction: 'Henry Joost e Ariel Schulman',
-        screenplay: 'Mattson Tomlin',
-        release: '14/08/2020'
+        text: 'Making Of do filme Enola Holmes, com as melhores cenas e momentos durante as gravações da série que estreia dia 23 de setembro, na Netflix.'
       },
       {
         iframe: this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/XbPVAiX3Igg'),
         title: 'Mulan',
         direction: 'Niki Caro e Ariel Schulman',
         screenplay: 'Rick Jaffa, Amanda Silver, Lauren Hynek e Elizabeth Martin',
-        release: '04/09/2020'
+        text: 'Making Of do filme Mulan com detalhes das cenas especiais. Estreia dia 04 de setembro, nos cinemas.'
       }
     ];
   }

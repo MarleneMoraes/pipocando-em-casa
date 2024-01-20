@@ -1,0 +1,12 @@
+<div class="card row mb-4" *ngFor="let article of articles; let i=index">
+  <div class="col-sm-12 col-md-12 col-lg-4">
+    <iframe class="card-img-top" width="100%" height="60%" [src]="article.iframe" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-8">
+    <h3 class="card-title mb-0">{{article.title}}</h3>
+    <p><small class="card-subtitle text-muted">Direção: {{article.direction}} | Roteiro: {{article.screenplay}}</small></p>
+    <p class="card-subtitle mb-2">{{article.text}}</p>
+  </div>
+</div>

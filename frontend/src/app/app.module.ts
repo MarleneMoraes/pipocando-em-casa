@@ -20,28 +20,32 @@ import { MakingofCardComponent } from './components/cards/makingof-card/makingof
 import { HighlightCardComponent } from './components/cards/highlight-card/highlight-card.component';
 import { SelectComponent } from './components/select/select.component';
 import { FormSearchComponent } from './components/form-search/form-search.component';
+import { ReleasesCardComponent } from './components/cards/releases-card/releases-card.component';
+import { MakingofLgCardComponent } from './components/cards/makingof-lg-card/makingof-lg-card.component';
 
 @NgModule({
   declarations: [
+    AboutComponent,
     AppComponent,
+    FormSearchComponent,
     FooterComponent,
-    HomeComponent,
     HighlightsComponent,
+    HighlightCardComponent,
+    HomeComponent,
     MakingOfComponent,
+    MakingofCardComponent,
     NewsComponent,
+    NewsCardComponent,
     RealeasesComponent,
     ReturnButtonComponent,
-    NewsCardComponent,
-    AboutComponent,
-    MakingofCardComponent,
-    HighlightCardComponent,
     SelectComponent,
-    FormSearchComponent,
-
+    ReleasesCardComponent,
+    MakingofLgCardComponent
   ],
-  imports: [HeaderComponent,
-    BrowserModule,
+  imports: [
     AppRoutingModule,
+    BrowserModule,
+    HeaderComponent,
     NgbModule
   ],
   providers: [],
