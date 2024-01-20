@@ -1,16 +1,19 @@
 <article>
   <h2>Sobre</h2>
-  <p class="text-justify" *ngFor="let text for aboutTexts">{{text}}</p>
+  <p class="text-about" *ngFor="let text of texts">{{text}}</p>
   <hr>
   <h2>Editorial</h2>
-  <p class="m-3" *ngFor="let editor for editors">
-    <i class="bi bi-person" style="font-size: 2rem;"></i>&nbsp;
+  <p class="m-3" *ngFor="let editor of editors">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-fill"
+      viewBox="0 0 16 16">
+      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+    </svg>&nbsp;
     <b>{{editor.position}}</b> {{editor.name}}
   </p>
 
   <div class="d-flex justify-content-center">
     <a class="m-3" href="{{socialMedia.path}}" target="_blank" *ngFor="let socialMedia for socialMedias">
-      <i class="{{socialMedia.class}}"></i>
+      <i class="bi {{socialMedia.class}}"></i>
     </a>
   </div>
 </article>

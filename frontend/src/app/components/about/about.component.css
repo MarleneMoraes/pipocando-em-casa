@@ -1,3 +1,7 @@
+.text-about {
+  text-align: justify;
+}
+
 .social-media {
   color: var(--color-accent);
   transition: all 0.4s ease-out;
