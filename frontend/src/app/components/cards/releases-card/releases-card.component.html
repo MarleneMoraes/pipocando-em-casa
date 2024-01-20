@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-between" *ngFor="let release of releases; let i=index">
+  <div class="col-sm-12 col-md-12 col-lg-8 my-4">
+    <iframe class="d-block w-100" height="400" [src]="release.path" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-4 m-4">
+    <h3 class="card-title text-light">
+      <strong>{{release.title}}</strong>
+    </h3>
+    <p class="card-text text-light">
+      {{release.summary}}
+    </p>
+    <p class="card-text text-light">
+      <strong>Direção:</strong>{{release.director}}
+    </p>
+    <p class="card-text text-light">
+      <strong>Roteiro:</strong> {{release.screenwriter}}
+    </p>
+    <p class="card-text text-light">
+      <strong>Elenco:</strong> {{release.cast}}
+    </p>
+    <p class="card-text text-light">
+      <strong>Estreia:</strong> {{release.releaseDate}}
+    </p>
+    <div class="d-flex">
+      <p class="card-text mr-1 text-light">
+        <strong>Avaliação:</strong>
+      </p>
+      <p class="text-warning">
+        {{release.rating}}
+      </p>
+    </div>
+  </div>
+</div>
