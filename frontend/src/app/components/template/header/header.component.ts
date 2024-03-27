@@ -29,6 +29,10 @@ export class HeaderComponent {
         title: 'Em Destaque'
       },
       {
+        path: '/assesment',
+        title: 'Avaliações'
+      },
+      {
         path: '/making-of',
         title: 'Entrevistas & Making Of'
       },

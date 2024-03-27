@@ -1,20 +1,17 @@
 .navbar {
-	background: var(--color-accent);
+  background: var(--color-accent);
 }
 
-/**/
-.navbar-toggler-icon {
-  color: var(--light);
-}
 /* Search icon */
 .btn-search {
+  width: 40px;
   background-color: var(--color-accent);
 }
 
-.btn-search:hover{
+.btn-search:hover {
   background-color: var(--color-hover);
 }
 
-.btn-search:active{
+.btn-search:active {
   background-color: var(--color-active);
 }
