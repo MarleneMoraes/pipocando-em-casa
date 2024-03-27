@@ -1,39 +1,48 @@
-<p>home works!</p>
-<section id="highlights">
-  <div class="container">
-    <div class="row">
-      <div class="mb-3 d-flex justify-content-between">
-        <h2 class="display-8 mb-3">Em Destaque</h2>
-        <app-select></app-select>
-      </div>
-      <app-highlight-card></app-highlight-card>
-      <!--plus btn-->
-    </div>
-  </div>
-</section>
+<div class="container">
 
-<section id="making-of">
-  <div class="container">
-    <div class="row">
-      <h2 class="display-8 mb-3">Entrevistas & Making Of</h2>
-      <app-makingof-card></app-makingof-card>
-      <!--plus btn-->
+  <section id="release">
+    <div class="container">
+      <h1 class="display-8 mb-3 text-light">Lançamentos</h1>
+      <!--<app-carousel></app-carousel>-->
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="news">
-  <div class="container">
-    <div class="row">
-      <article class="news col-md-8">
-        <h2 class="display-8 mb-3">Novidades</h2>
-        <app-news-card></app-news-card>
+  <section id="highlights">
+    <div class="container">
+      <div class="row">
+        <div class="mb-3 d-flex justify-content-between">
+          <h2 class="display-8 mb-3">Em Destaque</h2>
+          <app-select></app-select>
+        </div>
+        <app-highlight-card></app-highlight-card>
         <!--plus btn-->
-      </article>
-      <aside class="card mt-5 p-5 col-md-4">
-        <app-about></app-about>
-      </aside>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="making-of">
+    <div class="container">
+      <div class="row">
+        <h2 class="display-8 mb-3">Entrevistas & Making Of</h2>
+        <app-makingof-card></app-makingof-card>
+        <!--plus btn-->
+      </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="container">
+      <div class="row">
+        <article class="news col-md-9">
+          <h2 class="display-8 mb-3">Novidades</h2>
+          <app-news-card></app-news-card>
+          <!--plus btn-->
+        </article>
+        <aside class="card mt-5 mb-3 p-5 col-md-3">
+          <app-about></app-about>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
 <app-footer></app-footer>
