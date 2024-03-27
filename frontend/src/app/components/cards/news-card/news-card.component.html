@@ -1,7 +1,7 @@
 <div class="card mb-3" *ngFor="let article of articles; let i=index">
   <div class="row g-0">
     <div class="col-md-4">
-      <img width="100%" src="{{article.image}}" class="img-fluid rounded-start" alt="{{article.alt}}">
+      <img src="{{article.image}}" class="news-img img-fluid rounded-start" alt="{{article.alt}}">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -10,8 +10,12 @@
             {{article.title}}</a>
         </h5>
         <h6 class="card-subtitle text-muted">{{article.subtitle}}</h6>
-        <p class="card-text text-justify" *ngFor="let text of article.texts">{{text}}</p>
-  
+        <p class="card-text text-justify" *ngIf="isHomePage; else showAllText">
+          {{article.texts[0]}}
+        </p>
+        <ng-template #showAllText>
+          <p class="card-text text-justify" *ngFor="let text of article.texts">{{text}}</p>
+        </ng-template>
         <small class="text-body-secondary">{{article.obs}}</small>
         <br />
         <h5 class="badge" *ngFor="let badge of article.badges">{{badge}}</h5>

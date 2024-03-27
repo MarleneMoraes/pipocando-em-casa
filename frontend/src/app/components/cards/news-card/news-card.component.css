@@ -16,3 +16,8 @@
   color: var(--light);
   margin-right: 5px;
 }
+
+.news-img {
+  height: 100%;
+  width: 95%;
+}
