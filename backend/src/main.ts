@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 
+import { movieRoutes } from './infra/http/routes/movieRoutes';
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -15,6 +17,8 @@ app.get('/healthcheck', (req, res) => {
         project: 'PopcornTime'
     });
 });
+
+app.use('/movies', movieRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running: http://localhost:${PORT}`)
