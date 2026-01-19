@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 
 import { movieRoutes } from './infra/http/routes/movieRoutes';
+import { errorHandler } from './infra/http/middlewares/errorHandler';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -19,6 +20,8 @@ app.get('/healthcheck', (req, res) => {
 });
 
 app.use('/movies', movieRoutes);
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
     console.log(`Server running: http://localhost:${PORT}`)
