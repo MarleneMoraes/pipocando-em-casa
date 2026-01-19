@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Movie {
+  id           String   @id
+  title        String
+  overview     String
+  rating       Float
+  posterPath   String
+  releaseDate  DateTime
+  createdAt    DateTime @default(now())
+}
