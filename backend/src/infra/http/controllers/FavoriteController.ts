@@ -1,18 +1,20 @@
-import { string } from "./../../../../node_modules/effect/src/Config";
 import { Request, Response, NextFunction } from "express";
 import { AddFavoriteMovie } from "../../../application/use-cases/AddFavoriteMovie";
 import { ListFavoriteMovies } from "../../../application/use-cases/ListFavoriteMovies";
 import { RemoveFavoriteMovie } from "../../../application/use-cases/RemoveFavoriteMovie";
 import { PrismaMovieRepository } from "../../repositories/PrismaMovieRepository";
-import { sql as sqltag } from "@prisma/client-runtime-utils";
+import { addFavoriteSchema } from "../schemas/movieSchemas";
 
 export class FavoriteController {
   private movieRepository = new PrismaMovieRepository();
 
   async add(req: Request, res: Response, next: NextFunction) {
     try {
+      const validatedData = addFavoriteSchema.parse(req.body);
+
       const addFavorite = new AddFavoriteMovie(this.movieRepository);
-      await addFavorite.execute(req.body);
+      await addFavorite.execute(validatedData);
+      
       return res.status(201).send();
     } catch (error) {
       next(error);
