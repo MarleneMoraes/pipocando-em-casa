@@ -17,12 +17,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Use Node.js 25.x
+    - name: Use Node.js 22.x
       uses: actions/setup-node@v4
       with:
-        node-version: '25.x'
-        cache: 'npm'
-        cache-dependency-path: './backend/package-lock.json'
+        node-version: '22.x'
+        # cache: 'npm'
+        # cache-dependency-path: './backend/package-lock.json'
 
     - name: Install dependencies
       run: npm ci
