@@ -4,6 +4,7 @@ import 'dotenv/config';
 
 import { movieRoutes } from './infra/http/routes/movieRoutes';
 import { errorHandler } from './infra/http/middlewares/errorHandler';
+import { favoriteRoutes } from './infra/http/routes/favoriteRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,6 +21,7 @@ app.get('/healthcheck', (req, res) => {
 });
 
 app.use('/movies', movieRoutes);
+app.use('/favorites', favoriteRoutes);
 
 app.use(errorHandler);
 
