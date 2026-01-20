@@ -3,7 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 
 import { movieRoutes } from './infra/http/routes/movieRoutes';
-import { errorHandler } from './infra/http/middlewares/errorHandler';
+import { errorHandler } from './infra/http/middlewares/ErrorHandler';
 import { favoriteRoutes } from './infra/http/routes/favoriteRoutes';
 
 const app = express();
