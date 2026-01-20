@@ -5,9 +5,9 @@ import { GetNowPlayingMovies } from '../../../application/use-cases/GetNowPlayin
 export class MovieController {
   async getNowPlaying(req: Request, res: Response, next: NextFunction) {
     const movieGateway = new MovieGateway();
-    const getNowPlayingMovies = new GetNowPlayingMovies(movieGateway);
+    const getNowPlaying = new GetNowPlayingMovies(movieGateway);
 
-    const movies = await getNowPlayingMovies.execute().catch(next); 
+    const movies = await getNowPlaying.execute().catch(next); 
     
     if (movies) return res.json(movies);
   }
