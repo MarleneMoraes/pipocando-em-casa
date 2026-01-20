@@ -24,6 +24,6 @@ export class Movie {
     get title() { return this.props.title; }
     get overview() { return this.props.overview; }
     get rating() { return this.props.rating; }
-    get posterUrl() { return this.props.posterPath; }
+    get posterPath() { return this.props.posterPath; }
     get releaseDate() { return this.props.releaseDate; }
 }
