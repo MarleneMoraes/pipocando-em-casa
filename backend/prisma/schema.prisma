@@ -1,21 +1,20 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
 }
 
 model Movie {
-  id           String   @id
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
   title        String
   overview     String
   rating       Float
-  posterPath   String
+  posterPath   String?
   releaseDate  DateTime
   createdAt    DateTime @default(now())
+
+  @@map("movies")
 }

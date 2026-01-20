@@ -12,5 +12,20 @@ services:
       - ./backend:/app
       - /app/node_modules
     environment:
-      - PORT=3001
-      - DATABASE_URL=file:./dev.db
+      - DATABASE_URL=mongodb://root:example@mongodb:27017/popcorn?authSource=admin
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: popcorn_mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=1234
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
