@@ -1,15 +1,59 @@
-# Pipocando em Casa
+# PopcornTime
 
-<img src="https://raw.githubusercontent.com/MarleneMoraes/pipocando-em-casa/main/img/Logo.png" width="146" align="right" /> Esse repositório é referente ao primeiro trabalho da disciplina Desenvolvimento de Interfaces WEB, na PUC Minas, que consiste em criar site de filmes com *wireframe* preestabelecido. As cores, imagens, vídeos e alguns efeitos da página principal foram realizados por procura pessoal, pois gostaria de uma melhor apresentação.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
 
-O site pode ser visualizado neste [aqui](https://marlenemoraes.github.io/pipocando-em-casa)
+## Development server
 
-## Objetivos
-Realizar uma landing page do zero de criar um site de filmes com consumo em API jQuery. 
+To start a local development server, run:
 
-### Objetivos pessoais
-Este projeto foi feito em menos de 2 meses devido a entrega limitada e foi o meu primeiro site criado. Com o projeto fora de prazo, senti-me na obrigação de recriá-lo do zero, me desafiando a utilizar uma ferramenta que tanto tive dificuldade em utilizar — no caso, o Bootstrap — e gerar funcionalidade em JavaScript, visto que ela não o tinha. Apesar dos professores não exigirem a navegação entre páginas e nem as páginas internas, eu as criei para uma melhor experiência de quem está visualizando o conteúdo criado.
-Acredito que alcancei um resultado satisfatório entre a primeira e a segunda versão, ainda em andamento referente ao consumo de API.
+```bash
+ng serve
+```
 
-> Status do projeto: Em Andamento :pencil:
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
