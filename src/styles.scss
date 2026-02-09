@@ -1,3 +1,4 @@
+@use '@angular/material' as mat;
 @import 'assets/styles/variables';
 
 * {
@@ -21,6 +22,7 @@ section {
     font-family: var(--ff-logo);
 }
 
+.mat-toolbar.mat-primary,
 .btn-search {
     background-color: var(--color-accent);
     color: var(--light);

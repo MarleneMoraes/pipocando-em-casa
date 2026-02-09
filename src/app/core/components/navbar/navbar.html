@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="navbar">
+  <a routerLink="/" class="brand">
+    <img src="assets/images/logo.png"
+         alt="popcorn logo" width="40">
+    <span class="brand-text">Popcorn Time</span>
+  </a>
+
+  <span class="spacer"></span>
+
+  <div class="menu-items">
+    @for (item of menuItems; track item.label) {
+      <a mat-button [routerLink]="item.link" routerLinkActive="active-link">
+        {{ item.label }}
+      </a>
+    }
+  </div>
+
+  <div class="search-container">
+    <button mat-icon-button aria-label="Search film">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+
+  <button mat-icon-button class="mobile-menu-btn">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
