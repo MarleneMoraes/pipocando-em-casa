@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@import 'assets/styles/variables';
+@use 'assets/styles/variables';
 
 * {
     margin:0;
@@ -19,7 +19,7 @@ section {
 }
 
 .text-logo {
-    font-family: var(--ff-logo);
+    font-family: var(--ff-title);
 }
 
 .mat-toolbar.mat-primary,
