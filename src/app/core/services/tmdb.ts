@@ -4,6 +4,7 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { TmdbResponse } from '../models/movie.model';
 import { VideoResponse } from '../models/video.model';
+import { GenreResponse } from '../models/genre.model';
 
 @Injectable({ providedIn: 'root' })
 export class TmdbService {
@@ -47,5 +48,26 @@ export class TmdbService {
   getMovieVideos(movieId: number): Observable<VideoResponse> {
     const params = new HttpParams().set('api_key', this.apiKey);
     return this.http.get<VideoResponse>(`${this.apiUrl}/movie/${movieId}/videos`, { params });
+  }
+
+  getGenres(language: string = 'en-US'): Observable<GenreResponse> {
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('language', language);
+    return this.http.get<GenreResponse>(`${this.apiUrl}/genre/movie/list`, { params });
+  }
+
+  getMoviesByGenre(genreId: string, page: number = 1): Observable<TmdbResponse> {
+    let params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('language', 'en-US')
+      .set('page', page.toString())
+      .set('sort_by', 'popularity.desc');
+
+    if (genreId) {
+      params = params.set('with_genres', genreId);
+    }
+
+    return this.http.get<TmdbResponse>(`${this.apiUrl}/discover/movie`, { params });
   }
 }

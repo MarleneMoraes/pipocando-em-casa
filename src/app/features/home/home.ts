@@ -3,13 +3,14 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { MovieDto } from '../../core/models/movie.model';
 import { TmdbService } from '../../core/services/tmdb';
 import { Releases } from './components/releases/releases';
+import { Featured } from './components/featured/featured';
 import { MakingOf } from './components/making-of/making-of';
 import { VideoDto } from '../../core/models/video.model';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, Releases, MakingOf],
+  imports: [CommonModule, Releases, Featured, MakingOf],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
