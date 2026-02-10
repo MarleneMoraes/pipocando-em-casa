@@ -1,16 +1,3 @@
-.section {
-  padding: 60px 20px;
-  background-color: var(--background);
-}
-
-.section-title-dark {
-  font-family: var(--ff-title);
-  font-size: 2rem;
-  margin-bottom: 40px;
-  border-left: 5px solid var(--color-accent);
-  padding-left: 15px;
-}
-
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -93,27 +80,6 @@
     .play-overlay mat-icon {
       transform: translate(-50%, -50%) scale(1.2);
       color: var(--color-active);
-    }
-  }
-}
-
-.actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 40px;
-
-  .btn-more {
-    text-decoration: none;
-    background-color: var(--color-accent);
-    color: var(--light);
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-family: var(--ff-text);
-    transition: background 0.3s;
-
-    &:hover {
-      background-color: var(--color-hover);
     }
   }
 }

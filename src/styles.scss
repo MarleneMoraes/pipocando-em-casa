@@ -2,63 +2,96 @@
 @use 'assets/styles/variables';
 
 * {
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   height: 100%;
-    width: 100%;
-    background-color: var(--background);
+  width: 100%;
+  background-color: var(--background);
 }
 
-section {
-	padding:40px 0;
-	border-bottom: none;
+.section {
+  padding: 40px;
+  background-color: var(--background);
+  width: 100%;
 }
 
 .text-logo {
-    font-family: var(--ff-title);
+  font-family: var(--ff-title);
+}
+
+.section-title-dark {
+  font-family: var(--ff-title);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+
+  border-left: 5px solid var(--color-accent);
+  padding-left: 15px;
+  line-height: 1.2;
+}
+
+
+@mixin interactive-states {
+  &:hover {
+    background-color: var(--color-hover);
+    color: var(--light);
+  }
+
+  &:active {
+    background-color: var(--color-active);
+    color: var(--light);
+  }
 }
 
 .mat-toolbar.mat-primary,
+.btn-search,
+.btn-back {
+  background-color: var(--color-accent);
+  color: var(--light);
+}
 .btn-search {
-    background-color: var(--color-accent);
-    color: var(--light);
-}
-
-.btn-search:hover{
-    background-color: var(--color-hover);
-    color: var(--light);
-}
-
-.btn-search:active{
-    background-color: var(--color-active);
-    color: var(--light);
+  @include interactive-states;
 }
 
 .btn-back {
-    background-color: var(--color-accent);
-    color: var(--light);
+  @include interactive-states;
 }
 
-.btn-back:hover{
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.btn-more {
+  text-decoration: none;
+  background-color: var(--color-accent);
+  color: var(--light);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: var(--ff-text);
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+  display: inline-block;
+
+  &:hover {
     background-color: var(--color-hover);
     color: var(--light);
-}
-
-.btn-back:active{
-    background-color: var(--color-active);
-    color: var(--light);
+  }
 }
 
 .navbar,
 footer {
-	background: var(--color-accent);
+  background: var(--color-accent);
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
+  position: fixed;
+  bottom: 0;
 }
