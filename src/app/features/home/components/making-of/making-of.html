@@ -1,0 +1,40 @@
+<section class="section">
+  <div class="container">
+    <h2 class="section-title-dark">Interviews & Making Of</h2>
+
+    <div class="video-grid">
+      @for (movie of movies(); track movie.id) {
+      <div class="video-card">
+
+        <div class="thumbnail-container">
+          @if (videoMap().get(movie.id); as video) {
+          <iframe width="100%" height="100%" [src]="'https://www.youtube.com/embed/' + video.key | safeUrl"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          } @else {
+          <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" [alt]="movie.title" class="fallback-img">
+          }
+        </div>
+        <h3 class="card-title">{{ movie.title }}</h3>
+
+        <p class="card-subtitle mb-2">
+          <strong>Release:</strong> {{ movie.release_date | date:'dd/MM/yyyy' }}
+        </p>
+        <p class="card-subtitle mb-2">
+          <strong>Rating:</strong> ⭐ {{ movie.vote_average }}
+        </p>
+
+        <p class="card-subtitle description">
+          {{ movie.overview }}
+        </p>
+      </div>
+      }
+    </div>
+
+    <div class="actions">
+      <a class="btn-more" routerLink="/making-of">+ Making Of</a>
+    </div>
+  </div>
+</section>

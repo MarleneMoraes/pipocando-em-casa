@@ -1,0 +1,119 @@
+.section {
+  padding: 60px 20px;
+  background-color: var(--background);
+}
+
+.section-title-dark {
+  font-family: var(--ff-title);
+  font-size: 2rem;
+  margin-bottom: 40px;
+  border-left: 5px solid var(--color-accent);
+  padding-left: 15px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+
+  .card-title {
+    font-family: var(--ff-title);
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+    color: var(--color-accent);
+  }
+
+  .card-subtitle {
+    font-family: var(--ff-text);
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+}
+
+// thumbnail style
+.thumbnail-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #000;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  /* Play icon */
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    mat-icon {
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+  }
+
+  // hover effect
+  &:hover {
+    img {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+    .play-overlay mat-icon {
+      transform: translate(-50%, -50%) scale(1.2);
+      color: var(--color-active);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+
+  .btn-more {
+    text-decoration: none;
+    background-color: var(--color-accent);
+    color: var(--light);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: var(--ff-text);
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: var(--color-hover);
+    }
+  }
+}
