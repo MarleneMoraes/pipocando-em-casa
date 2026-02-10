@@ -1,0 +1,34 @@
+<section class="section">
+  <div class="content-wrapper">
+    <h1 class="section-title">Releases</h1>
+    @if (currentMovie(); as movie) {
+    <div class="movie-showcase">
+      <div class="media-area">
+        <img [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path" [alt]="movie.title"
+          class="backdrop-img">
+      </div>
+
+      <div class="info-area">
+        <h2 class="movie-title">
+          {{ movie.title }}
+        </h2>
+
+        <p class="movie-overview">
+          {{ movie.overview }}
+        </p>
+
+        <div class="movie-meta">
+          <p><strong>Release:</strong> {{ movie.release_date | date:'dd/MM/yyyy' }}</p>
+          <p><strong>Rating:</strong> ⭐ {{ movie.vote_average | number:'1.1-1' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="indicators">
+      @for (m of movies(); track m.id; let i = $index) {
+      <span class="dot" [class.active]="i === currentSlideIndex()" (click)="goToSlide(i)"></span>
+      }
+    </div>
+    }
+  </div>
+</section>
