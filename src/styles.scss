@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
-@use 'assets/styles/variables';
+@use 'variables';
+@use 'mixins';
+@use 'components';
 
 * {
   margin: 0;
@@ -11,6 +13,27 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--background);
+  color: var(--dark-gray);
+}
+
+a,
+button,
+.badge {
+  font-family: var(--ff-text) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-title);
+  color: var(--color-title);
+}
+
+a {
+  text-decoration: none;
 }
 
 .section {
@@ -19,46 +42,40 @@ body {
   width: 100%;
 }
 
-.text-logo {
-  font-family: var(--ff-title);
-}
-
 .section-title-dark {
-  font-family: var(--ff-title);
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 40px;
-
   border-left: 5px solid var(--color-accent);
   padding-left: 15px;
   line-height: 1.2;
 }
 
+.btn-base {
+  background-color: var(--color-accent);
+  color: var(--light);
+  transition:
+    background 0.3s,
+    transform 0.2s;
+  cursor: pointer;
 
-@mixin interactive-states {
   &:hover {
     background-color: var(--color-hover);
     color: var(--light);
   }
-
   &:active {
     background-color: var(--color-active);
-    color: var(--light);
   }
 }
 
-.mat-toolbar.mat-primary,
-.btn-search,
-.btn-back {
+.mat-toolbar.mat-primary{
   background-color: var(--color-accent);
   color: var(--light);
 }
-.btn-search {
-  @include interactive-states;
-}
 
+.btn-search,
 .btn-back {
-  @include interactive-states;
+  @extend .btn-base;
 }
 
 .actions {
@@ -69,28 +86,18 @@ body {
 }
 
 .btn-more {
+  @extend .btn-base;
   text-decoration: none;
-  background-color: var(--color-accent);
-  color: var(--light);
   padding: 10px 20px;
   border-radius: 4px;
   font-weight: bold;
-  font-family: var(--ff-text);
-  transition: background 0.3s, transform 0.2s;
-  cursor: pointer;
   display: inline-block;
-
-  &:hover {
-    background-color: var(--color-hover);
-    color: var(--light);
-  }
 }
 
 .navbar,
 footer {
   background: var(--color-accent);
 }
-
 footer {
   bottom: 0;
 }

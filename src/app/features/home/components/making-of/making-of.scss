@@ -1,9 +1,16 @@
+@use 'variables';
+@use 'mixins' as *;
+
+:host {
+  @include section-container;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 
-  @media (max-width: 768px) {
+  @include tablet {
     grid-template-columns: 1fr;
   }
 }
@@ -28,11 +35,8 @@
   }
 
   .description {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     margin-bottom: 10px;
+    @include text-clamp(3);
   }
 }
 

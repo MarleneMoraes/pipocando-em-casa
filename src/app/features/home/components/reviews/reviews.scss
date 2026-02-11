@@ -1,13 +1,12 @@
+@use 'variables';
+@use 'mixins' as *;
+
+:host {
+  @include section-container;
+}
+
 .reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
+  @include responsive-grid(300px, 30px);
 }
 
 .review-card {
@@ -62,13 +61,8 @@
   color: var(--dark-gray);
   line-height: 1.6;
   font-style: italic;
-
   text-align: justify;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  @include text-clamp(6);
 }
 
 .rating-area {
@@ -81,15 +75,7 @@
 }
 
 .stars {
-  font-size: 1.2rem;
-
-  .star.filled {
-    color: var(--gold);
-  }
-
-  .star.empty {
-    color: var(--dark-gray);
-  }
+  @include star-rating;
 }
 
 .date {

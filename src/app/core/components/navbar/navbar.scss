@@ -32,16 +32,22 @@
   }
 
   a {
+    color: var(--light);
+    text-decoration: none;
     font-family: var(--ff-text);
-
-    &.active-link {
-      background: rgba(255, 255, 255, 0.1);
-      opacity: 1;
-      font-weight: bold;
-    }
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 
     &:hover {
-      background: var(--color-hover);
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    &.active-link {
+      background-color: rgba(255, 255, 255, 0.25);
+      font-weight: bold;
     }
   }
 }
