@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ReviewDisplay, ReviewDto } from '../../../../core/models/review.model';
 import { TmdbService } from '../../../../core/services/tmdb';
 import { MovieDto } from '../../../../core/models/movie.model';
+import { StarRating } from '../../../../shared/components/star-rating/star-rating';
 
 @Component({
   selector: 'app-reviews',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, StarRating],
   templateUrl: './reviews.html',
   styleUrl: './reviews.scss',
 })

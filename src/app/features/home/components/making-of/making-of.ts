@@ -5,11 +5,12 @@ import { RouterModule } from '@angular/router';
 import { MovieDto } from '../../../../core/models/movie.model';
 import { VideoDto } from '../../../../core/models/video.model';
 import { SafeUrlPipe } from '../../../../core/pipes/safe-pipe';
+import { StarRating } from '../../../../shared/components/star-rating/star-rating';
 
 @Component({
   selector: 'app-making-of',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatIconModule, SafeUrlPipe],
+  imports: [CommonModule, RouterModule, MatIconModule, StarRating, SafeUrlPipe],
   templateUrl: './making-of.html',
   styleUrl: './making-of.scss',
 })

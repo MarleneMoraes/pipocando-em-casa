@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, input, effect, OnDestroy, signal, computed } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MovieDto } from '../../../../core/models/movie.model';
+import { StarRating } from '../../../../shared/components/star-rating/star-rating';
 
 @Component({
   selector: 'app-releases',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, StarRating],
   templateUrl: './releases.html',
   styleUrl: './releases.scss',
 })

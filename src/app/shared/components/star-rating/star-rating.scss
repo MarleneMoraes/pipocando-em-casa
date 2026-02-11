@@ -1,0 +1,9 @@
+@use 'mixins' as *;
+
+:host {
+  display: inline-block;
+}
+
+.stars {
+  @include star-rating;
+}

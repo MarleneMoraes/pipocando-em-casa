@@ -19,7 +19,7 @@
 
         <div class="movie-meta">
           <p><strong>Release:</strong> {{ movie.release_date | date:'dd/MM/yyyy' }}</p>
-          <p><strong>Rating:</strong> ⭐ {{ movie.vote_average | number:'1.1-1' }}</p>
+          <p><strong>Rating: </strong><app-star-rating [rating]="movie.vote_average"></app-star-rating></p>
         </div>
       </div>
     </div>

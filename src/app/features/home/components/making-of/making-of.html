@@ -23,7 +23,7 @@
           <strong>Release:</strong> {{ movie.release_date | date:'dd/MM/yyyy' }}
         </p>
         <p class="card-subtitle">
-          <strong>Rating:</strong> ⭐ {{ movie.vote_average }}
+          <strong>Rating: </strong> <app-star-rating [rating]="8.5"></app-star-rating>
         </p>
 
         <p class="card-subtitle description">

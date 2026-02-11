@@ -19,14 +19,7 @@
         <div class="review-body">
           <p class="review-text">"{{ review.content }}"</p>
           <div class="rating-area">
-              <div class="stars">
-                @for (star of review.stars; track $index) {
-                  <span class="star filled">★</span>
-                }
-                @for (star of review.emptyStars; track $index) {
-                  <span class="star empty">☆</span>
-                }
-              </div>
+              <app-star-rating [rating]="review.rating"></app-star-rating>
               <span class="date">{{ review.date | date:'MM/dd/yyyy' }}</span>
             </div>
         </div>
