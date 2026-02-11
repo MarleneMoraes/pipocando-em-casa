@@ -7,11 +7,12 @@ import { Featured } from './components/featured/featured';
 import { MakingOf } from './components/making-of/making-of';
 import { VideoDto } from '../../core/models/video.model';
 import { Reviews } from "./components/reviews/reviews";
+import { News } from "./components/news/news";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, Releases, Featured, MakingOf, Reviews],
+  imports: [CommonModule, Releases, Featured, MakingOf, Reviews, News],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

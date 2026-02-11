@@ -1,0 +1,79 @@
+<section class="section" id="news">
+  <div class="container news-layout">
+
+    <article class="news-column">
+      <h2 class="section-title-dark">Latest News</h2>
+
+      <div class="news-list">
+        @for (movie of upcomingMovies(); track movie.id) {
+          <div class="news-card">
+
+            <div class="news-img-wrapper">
+              <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
+                   [alt]="movie.title">
+            </div>
+
+            <div class="news-content">
+              <h5 class="news-title">
+                <a routerLink="/movie/{{movie.id}}">
+                  {{ movie.title }} | Official Release Date Announced
+                </a>
+              </h5>
+
+              <h6 class="news-meta">
+                {{ movie.release_date | date:'MM/dd/yyyy' }} | TMDB News
+              </h6>
+
+              <p class="news-text">
+                {{ movie.overview }}
+              </p>
+
+              <div class="badges-area">
+                @for (genreId of movie.genre_ids.slice(0, 2); track genreId) {
+                  <span class="badge">{{ getGenreName(genreId) }}</span>
+                }
+                <span class="badge">Coming Soon</span>
+              </div>
+            </div>
+
+          </div>
+        }
+      </div>
+
+      <div class="actions">
+        <a class="btn-more" routerLink="/news">+ More News</a>
+      </div>
+    </article>
+
+
+    <aside class="about-column">
+      <div class="about-card">
+        <h3>About Us</h3>
+        <p>
+          <strong>Pipocando em Casa</strong> is your go-to source for movie news, streaming updates, and awards coverage.
+          Developed originally as an academic project, it has evolved into a complete movie database powered by TMDB.
+        </p>
+        <p>
+          Version 2.0 (2026) brings a completely revamped interface using Angular 21, Signals, and pure CSS, leaving legacy frameworks behind.
+        </p>
+
+        <hr>
+
+        <h3>Editorial Team</h3>
+        <div class="team-list">
+          <p><i class="user-icon">👤</i> <b>Editor:</b> Marlene Vasconcelos</p>
+          <p><i class="user-icon">👤</i> <b>Research:</b> Marlene Moraes</p>
+          <p><i class="user-icon">👤</i> <b>General Manager:</b> Marlene Oliveira</p>
+        </div>
+
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</section>

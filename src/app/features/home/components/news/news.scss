@@ -1,0 +1,158 @@
+// main layout
+.news-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// news section
+.news-card {
+  display: flex;
+  background-color: var(--light);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.news-img-wrapper {
+  width: 35%;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.news-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-title {
+  font-family: var(--ff-title);
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+
+  a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: bold;
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.news-meta {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.news-text {
+  font-family: var(--ff-text);
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.badges-area {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  .badge {
+    background-color: var(--background);
+    color: var(--dark-gray);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+// about section
+
+.about-card {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+
+  h3 {
+    font-family: var(--ff-title);
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+
+  p {
+    font-family: var(--ff-text);
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+}
+
+.team-list {
+  margin-bottom: 30px;
+
+  p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  a {
+    color: var(--dark-gray);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}

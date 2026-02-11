@@ -6,6 +6,7 @@ export interface MovieDto {
   vote_average: number;
   release_date: string;
   overview: string;
+  genre_ids: number[];
 }
 
 export interface TmdbResponse {
