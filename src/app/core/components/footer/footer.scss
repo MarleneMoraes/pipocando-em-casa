@@ -1,0 +1,48 @@
+.app-footer {
+ background-color:var(--gray);
+color: var(--dark-gray);
+  padding: 15px 0;
+  width: 100%;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-family: var(--ff-text);
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+  }
+}
+
+.separator {
+  margin: 0 10px;
+  color: var(--color-accent);
+  opacity: 0.7;
+}
+
+.author-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--color-hover);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-content p {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .separator {
+    display: none;
+  }
+}
