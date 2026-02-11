@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { TmdbResponse } from '../models/movie.model';
 import { VideoResponse } from '../models/video.model';
 import { GenreResponse } from '../models/genre.model';
+import { ReviewResponse } from '../models/review.model';
 
 @Injectable({ providedIn: 'root' })
 export class TmdbService {
@@ -51,9 +52,7 @@ export class TmdbService {
   }
 
   getGenres(language: string = 'en-US'): Observable<GenreResponse> {
-    const params = new HttpParams()
-      .set('api_key', this.apiKey)
-      .set('language', language);
+    const params = new HttpParams().set('api_key', this.apiKey).set('language', language);
     return this.http.get<GenreResponse>(`${this.apiUrl}/genre/movie/list`, { params });
   }
 
@@ -69,5 +68,10 @@ export class TmdbService {
     }
 
     return this.http.get<TmdbResponse>(`${this.apiUrl}/discover/movie`, { params });
+  }
+
+  getMovieReviews(movieId: number): Observable<ReviewResponse> {
+    const params = new HttpParams().set('api_key', this.apiKey).set('language', 'en-US');
+    return this.http.get<ReviewResponse>(`${this.apiUrl}/movie/${movieId}/reviews`, { params });
   }
 }

@@ -6,11 +6,12 @@ import { Releases } from './components/releases/releases';
 import { Featured } from './components/featured/featured';
 import { MakingOf } from './components/making-of/making-of';
 import { VideoDto } from '../../core/models/video.model';
+import { Reviews } from "./components/reviews/reviews";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, Releases, Featured, MakingOf],
+  imports: [CommonModule, Releases, Featured, MakingOf, Reviews],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
