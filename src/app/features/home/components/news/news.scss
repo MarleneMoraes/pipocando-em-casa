@@ -123,13 +123,13 @@ p {
     font-family: var(--ff-title);
     font-size: 1.5rem;
     color: var(--color-accent);
-    margin: 10px  0 20px;
+    margin: 10px 0 20px;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
   }
 
   hr {
-    margin: 30px auto;
+    margin: 20px auto;
   }
 }
 
@@ -145,13 +145,12 @@ p {
 
 .social-links {
   @include flex-center;
-  margin: 20px auto;
+  margin: 5px auto;
   gap: 20px;
 
   a {
     color: var(--dark-gray);
-    //transition: color 0.3s;
-        transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
     &:hover {
       color: var(--color-accent);
       transform: translateY(-10px);

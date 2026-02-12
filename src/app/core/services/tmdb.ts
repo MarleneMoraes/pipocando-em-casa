@@ -14,7 +14,7 @@ export class TmdbService {
   private apiUrl = environment.apiUrl;
   private apiKey = environment.api_key;
 
-  getPopularMovies(page: number = 1, language: string = 'pt-BR'): Observable<TmdbResponse> {
+  getPopularMovies(page: number = 1, language: string = 'en-US'): Observable<TmdbResponse> {
     const params = new HttpParams()
       .set('api_key', this.apiKey)
       .set('language', language)
@@ -26,7 +26,7 @@ export class TmdbService {
   searchMovies(
     query: string,
     page: number = 1,
-    language: string = 'pt-BR',
+    language: string = 'en-US'
   ): Observable<TmdbResponse> {
     const params = new HttpParams()
       .set('api_key', this.apiKey)
@@ -37,7 +37,7 @@ export class TmdbService {
     return this.http.get<TmdbResponse>(`${this.apiUrl}/search/movie`, { params });
   }
 
-  getTopRatedMovies(page: number = 1, language: string = 'pt-BR'): Observable<TmdbResponse> {
+  getTopRatedMovies(page: number = 1, language: string = 'en-US'): Observable<TmdbResponse> {
     const params = new HttpParams()
       .set('api_key', this.apiKey)
       .set('language', language)
