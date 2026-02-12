@@ -17,8 +17,15 @@ body {
 }
 
 a,
+p,
 button,
-.badge {
+.badge,
+.mat-mdc-form-field,
+.mat-mdc-input-element,
+.mat-mdc-form-field-label,
+.mat-mdc-floating-label,
+.mat-mdc-select-value,
+.mat-mdc-option {
   font-family: var(--ff-text) !important;
 }
 

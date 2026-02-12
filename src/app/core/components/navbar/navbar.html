@@ -1,7 +1,6 @@
 <mat-toolbar color="primary" class="navbar">
   <a routerLink="/" class="brand">
-    <img src="assets/images/logo.png"
-         alt="popcorn logo" width="40">
+    <img src="assets/images/logo.png" alt="popcorn logo" width="40">
     <span class="brand-text">Popcorn Time</span>
   </a>
 
@@ -9,16 +8,25 @@
 
   <div class="menu-items">
     @for (item of menuItems; track item.label) {
-      <a mat-button [routerLink]="item.link" routerLinkActive="active-link">
-        {{ item.label }}
-      </a>
+    <a mat-button [routerLink]="item.link" routerLinkActive="active-link">
+      {{ item.label }}
+    </a>
     }
   </div>
 
   <div class="search-container">
-    <button mat-icon-button aria-label="Search film">
-      <mat-icon>search</mat-icon>
-    </button>
+    <form class="search-form" (submit)="onSearch()">
+
+      <mat-form-field appearance="outline" class="search-field" subscriptSizing="dynamic">
+        <mat-label>Search movies</mat-label>
+        <input matInput type="search" [(ngModel)]="searchTerm" name="search">
+
+        <button matSuffix mat-icon-button class="btn-search" type="submit">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+
+    </form>
   </div>
 
   <button mat-icon-button class="mobile-menu-btn">

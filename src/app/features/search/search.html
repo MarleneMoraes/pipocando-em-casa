@@ -1,0 +1,37 @@
+<section class="section search-page">
+  <div class="container">
+
+    <h2 class="section-title-dark">
+      Results for: <span class="highlight">"{{ query() }}"</span>
+    </h2>
+
+    @if (loading()) {
+      <div class="loading">Searching...</div>
+    } @else if (results().length === 0) {
+      <div class="no-results">
+        <p>No movies found using this term :/</p>
+      </div>
+    } @else {
+      <div class="movies-grid">
+        @for (movie of results(); track movie.id) {
+          <div class="movie-item">
+            <a [routerLink]="['/movie', movie.id]" class="poster-link">
+              @if (movie.poster_path) {
+                <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+                     [alt]="movie.title"
+                     class="movie-poster">
+              } @else {
+                <div class="poster-placeholder">No Image</div>
+              }
+            </a>
+
+            <div class="movie-info">
+              <h4 class="movie-title">{{ movie.title }}</h4>
+              <p class="movie-meta"><app-star-rating [rating]="movie.vote_average"></app-star-rating> | {{ movie.release_date | date:'yyyy' }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

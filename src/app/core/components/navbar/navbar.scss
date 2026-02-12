@@ -1,3 +1,17 @@
+@mixin interactive-states {
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-hover);
+    color: var(--light);
+  }
+
+  &:active {
+    background-color: var(--color-active);
+    color: var(--light);
+  }
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -54,8 +68,124 @@
 
 .mobile-menu-btn {
   color: var(--light);
+  display: block;
 
   @media (min-width: 992px) {
-    display: none;
+    display: none !important;
   }
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 16px;
+}
+
+.search-form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.search-field {
+  width: 250px;
+  font-size: 14px;
+}
+
+// material overrides
+/* 1. Esconde a borda original "quebrada" do Material */
+::ng-deep .search-field .mdc-notched-outline__leading,
+::ng-deep .search-field .mdc-notched-outline__notch,
+::ng-deep .search-field .mdc-notched-outline__trailing {
+  border: none !important; /* Tchau borda nativa */
+}
+
+/* 2. Cria a nossa borda personalizada no Wrapper */
+::ng-deep .search-field .mat-mdc-text-field-wrapper {
+  height: 36px !important;
+  padding: 0 8px !important;
+
+  /* AQUI DESENHAMOS A NOVA BORDA */
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px; /* Arredondamento da borda */
+
+  display: flex;
+  align-items: center;
+  transition: border-color 0.3s ease;
+}
+
+/* Efeito de Foco na borda */
+::ng-deep .search-field.mat-focused .mat-mdc-text-field-wrapper {
+  border-color: #fff; /* Fica branco total ao focar */
+  border-width: 2px;  /* Fica mais grossa ao focar (opcional) */
+}
+
+/* --- AJUSTES INTERNOS (Infix, Input, Icon) --- */
+::ng-deep .search-field .mat-mdc-form-field-infix {
+  padding: 0 !important;
+  min-height: unset !important;
+  border-top: none !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep .search-field input.mat-mdc-input-element {
+  margin-top: 0 !important;
+  position: relative;
+  top: 0 !important;
+  transform: translateY(1px);
+  caret-color: #fff; /* Cor do cursor piscando */
+}
+
+::ng-deep .search-field .mat-mdc-form-field-icon-suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 !important;
+}
+
+::ng-deep .search-field .mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+
+::ng-deep .search-field .mat-mdc-floating-label {
+  top: 50% !important;
+  left: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+              color 0.2s ease,
+              background-color 0.2s ease;
+
+  pointer-events: none;
+  max-width: 100%;
+  transform: translateY(9px) scale(1);
+}
+
+::ng-deep .search-field.mat-focused .mat-mdc-floating-label,
+::ng-deep .search-field.mat-form-field-invalid .mat-mdc-floating-label,
+::ng-deep .search-field .mdc-floating-label--float-above {
+  top: 0 !important;
+  transform: translateY(-50%) scale(0.85) !important;
+  background-color: var(--color-accent);
+
+  padding: 0 4px;
+  margin-left: -4px;
+  border-radius: 4px;
+  color: var(--light);
+  font-weight: 500;
 }

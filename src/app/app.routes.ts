@@ -3,4 +3,9 @@ import { Home } from './features/home/home';
 
 export const routes: Routes = [
   { path: '', component: Home },
+  {
+    path: 'search/:query',
+    loadComponent: () => import('./features/search/search').then(m => m.Search)
+  },
+  { path: '**', redirectTo: '' }
 ];
