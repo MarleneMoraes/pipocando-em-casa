@@ -8,7 +8,10 @@
 
   <div class="menu-items">
     @for (item of menuItems; track item.label) {
-    <a mat-button [routerLink]="item.link" routerLinkActive="active-link">
+    <a mat-button
+      [routerLink]="item.link"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact: item.exact || false}">
       {{ item.label }}
     </a>
     }

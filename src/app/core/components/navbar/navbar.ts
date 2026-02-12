@@ -26,11 +26,11 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class Navbar {
   menuItems = [
-    { label: 'Releases', link: '/' },
-    { label: 'Featured', link: '/featured' },
-    { label: 'Reviews', link: '/reviews' },
-    { label: 'Interviews & Making Of', link: '/making-of' },
-    { label: 'News', link: '/news' },
+    { label: 'Home', link: '/', exact: true },
+    { label: 'Featured', link: '/featured', exact: false },
+    { label: 'Reviews', link: '/reviews', exact: false },
+    { label: 'Interviews & Making Of', link: '/making-of', exact: false },
+    { label: 'News', link: '/news', exact: false },
   ];
 
   searchTerm = signal('');
