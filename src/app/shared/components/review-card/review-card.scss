@@ -1,14 +1,6 @@
 @use 'variables';
 @use 'mixins' as *;
 
-:host {
-  @include section-container;
-}
-
-.reviews-grid {
-  @include responsive-grid(300px, 30px);
-}
-/*
 .review-card {
   background: var(--light);
   padding: 25px;
@@ -17,6 +9,12 @@
   flex-direction: column;
   gap: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .review-header {
@@ -33,24 +31,18 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-  .header-info {
-    display: flex;
-    flex-direction: column;
-  }
-
   .user-name {
     font-family: var(--ff-title);
     font-size: 1rem;
     font-weight: bold;
     margin: 0;
+    color: var(--color-title);
   }
 
   .movie-tag {
     font-size: 0.75rem;
     color: var(--dark-gray);
-    strong {
-      color: var(--color-accent);
-    }
+    strong { color: var(--color-accent); }
   }
 }
 
@@ -68,16 +60,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--gray);
   padding-top: 15px;
-}
-
-.stars {
-  @include star-rating;
 }
 
 .date {
   font-size: 0.8rem;
   color: var(--dark-gray);
 }
-*/

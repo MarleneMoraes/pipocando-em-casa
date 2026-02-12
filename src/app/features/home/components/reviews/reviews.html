@@ -3,27 +3,11 @@
     <h2 class="section-title-dark">Latest Reviews</h2>
 
     <div class="reviews-grid">
-      @for (review of reviewsDisplay(); track review.author) {
-      <div class="review-card">
-        <div class="review-header">
-          <img [src]="review.avatar"
-               [alt]="review.author"
-               class="user-avatar"
-               (error)="handleImageError($event, review.author)">
-          <div>
-            <h4 class="user-name">{{ review.author }}</h4>
-            <span class="movie-tag">Watched: <strong>{{ review.movieTitle }}</strong></span>
-          </div>
-        </div>
-
-        <div class="review-body">
-          <p class="review-text">"{{ review.content }}"</p>
-          <div class="rating-area">
-              <app-star-rating [rating]="review.rating"></app-star-rating>
-              <span class="date">{{ review.date | date:'MM/dd/yyyy' }}</span>
-            </div>
-        </div>
-      </div>
+      @for (item of displayItems(); track item.review.author) {
+        <app-review-card
+            [review]="item.review"
+            [movieTitle]="item.movieTitle">
+        </app-review-card>
       }
     </div>
 

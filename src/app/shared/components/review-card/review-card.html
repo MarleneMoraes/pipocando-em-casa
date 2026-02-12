@@ -1,0 +1,22 @@
+<div class="review-card">
+  <div class="review-header">
+    <img [src]="avatarUrl()"
+         [alt]="review().author"
+         class="user-avatar"
+         (error)="handleImageError($event)">
+
+    <div class="header-info">
+      <h4 class="user-name">{{ review().author }}</h4>
+      <span class="movie-tag">Watched: <strong>{{ movieTitle() }}</strong></span>
+    </div>
+  </div>
+
+  <div class="review-body">
+    <p class="review-text">"{{ cleanContent() }}"</p>
+
+    <div class="rating-area">
+      <app-star-rating [rating]="rating()"></app-star-rating>
+      <span class="date">{{ date() | date:'MM/dd/yyyy' }}</span>
+    </div>
+  </div>
+</div>
