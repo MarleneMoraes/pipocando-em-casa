@@ -13,20 +13,8 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--background);
+  font-family: var(--ff-text);
   color: var(--dark-gray);
-}
-
-a,
-p,
-button,
-.badge,
-.mat-mdc-form-field,
-.mat-mdc-input-element,
-.mat-mdc-form-field-label,
-.mat-mdc-floating-label,
-.mat-mdc-select-value,
-.mat-mdc-option {
-  font-family: var(--ff-text) !important;
 }
 
 h1,
@@ -41,6 +29,13 @@ h6 {
 
 a {
   text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
 }
 
 .section {
@@ -75,7 +70,7 @@ a {
   }
 }
 
-.mat-toolbar.mat-primary{
+.mat-toolbar.mat-primary {
   background-color: var(--color-accent);
   color: var(--light);
 }
@@ -105,6 +100,7 @@ a {
 footer {
   background: var(--color-accent);
 }
+
 footer {
   bottom: 0;
 }

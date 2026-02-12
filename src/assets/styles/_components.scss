@@ -58,7 +58,6 @@
     }
 
     .movie-overview {
-      font-family: var(--ff-text);
       font-size: 1.1rem;
       line-height: 1.6;
       @include text-clamp(6);
