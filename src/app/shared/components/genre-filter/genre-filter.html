@@ -18,9 +18,9 @@
   </select>
 </div>
 
-<div class="movies-grid">
+<div class="movies-grid" [class.preview-grid]="isPreview">
   @for (movie of movies(); track movie.id) {
-  <div class="movie-item">
+  <div class="movie-item" [routerLink]="['/movie', movie.id]">
 
     <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
     class="movie-poster"

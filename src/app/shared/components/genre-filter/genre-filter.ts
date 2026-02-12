@@ -4,11 +4,12 @@ import { TmdbService } from '../../../core/services/tmdb';
 import { FormsModule } from '@angular/forms';
 import { MovieDto } from '../../../core/models/movie.model';
 import { GenreDto } from '../../../core/models/genre.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-genre-filter',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './genre-filter.html',
   styleUrl: './genre-filter.scss',
 })
