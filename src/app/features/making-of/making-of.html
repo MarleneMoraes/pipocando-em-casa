@@ -1,0 +1,69 @@
+<section class="section">
+  <div class="container">
+
+    @if (loading()) {
+    <div class="loading-state">Loading content...</div>
+    } @else {
+
+    <div class="video-group">
+      <h2 class="group-title">Making Of</h2>
+
+      @for (item of makingOfItems(); track item.id) {
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe [src]="getSafeUrl(item.id)" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="text-wrapper">
+          <h3 class="movie-title">{{ item.title }}: {{ item.videoTitle }}</h3>
+
+          <p class="credits-text">
+            <small class="text-muted">{{ item.credits }} </small>
+          </p>
+          <p class="description-text">
+            {{ item.description }}
+          </p>
+
+
+        </div>
+      </div>
+      }
+    </div>
+
+    <hr class="divider">
+
+    <div class="video-group">
+      <h2 class="group-title">Interviews</h2>
+
+      @for (item of interviewItems(); track item.id) {
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe [src]="getSafeUrl(item.id)" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="text-wrapper">
+          <h3 class="movie-title">{{ item.title }}</h3>
+
+          <p class="credits-text">
+            <small class="text-muted">{{ item.credits }}</small>
+          </p>
+
+          <p class="description-text">
+            {{ item.description }}
+          </p>
+        </div>
+      </div>
+      }
+    </div>
+
+    }
+
+    <div class="actions">
+      <a class="btn-base btn-back" (click)="goBack()">Back</a>
+    </div>
+  </div>
+
+</section>

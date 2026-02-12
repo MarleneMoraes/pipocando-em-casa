@@ -38,6 +38,7 @@ select {
   font-family: inherit;
 }
 
+.container,
 .section {
   padding: 40px;
   background-color: var(--background);
@@ -76,7 +77,8 @@ select {
 }
 
 .btn-search,
-.btn-back {
+.btn-back,
+.btn-more {
   @extend .btn-base;
 }
 
@@ -87,7 +89,8 @@ select {
   width: 100%;
 }
 
-.btn-more {
+.btn-more,
+.btn-back {
   @extend .btn-base;
   text-decoration: none;
   padding: 10px 20px;
@@ -96,8 +99,7 @@ select {
   display: inline-block;
 }
 
-.navbar,
-footer {
+.navbar {
   background: var(--color-accent);
 }
 

@@ -91,4 +91,9 @@ export class TmdbService {
 
     return this.http.get<any>(`${this.apiUrl}/movie/${id}`, { params });
   }
+
+  getMovieCredits(movieId: number): Observable<any> {
+  const params = new HttpParams().set('api_key', this.apiKey);
+  return this.http.get<any>(`${this.apiUrl}/movie/${movieId}/credits`, { params });
+}
 }
