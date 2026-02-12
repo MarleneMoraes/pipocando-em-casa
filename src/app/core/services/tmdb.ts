@@ -26,7 +26,7 @@ export class TmdbService {
   searchMovies(
     query: string,
     page: number = 1,
-    language: string = 'en-US'
+    language: string = 'en-US',
   ): Observable<TmdbResponse> {
     const params = new HttpParams()
       .set('api_key', this.apiKey)
@@ -82,5 +82,13 @@ export class TmdbService {
       .set('page', page.toString());
 
     return this.http.get<TmdbResponse>(`${this.apiUrl}/movie/upcoming`, { params });
+  }
+
+  getMovieDetails(id: string): Observable<any> {
+    const params = new HttpParams()
+    .set('api_key', this.apiKey)
+    .set('language', 'en-US');
+
+    return this.http.get<any>(`${this.apiUrl}/movie/${id}`, { params });
   }
 }
