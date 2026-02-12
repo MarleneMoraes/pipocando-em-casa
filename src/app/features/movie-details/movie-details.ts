@@ -3,6 +3,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TmdbService } from '../../core/services/tmdb';
 import { MatDialogModule } from '@angular/material/dialog';
+import { BaseComponent } from '../../shared/classes/base-component/base-component';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   templateUrl: './movie-details.html',
   styleUrl: './movie-details.scss',
 })
-export class MovieDetails implements OnInit {
+export class MovieDetails extends BaseComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private tmdbService = inject(TmdbService);
 

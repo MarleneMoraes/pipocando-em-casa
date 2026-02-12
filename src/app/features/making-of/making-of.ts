@@ -1,9 +1,10 @@
 import { Component, inject, OnInit, signal, computed } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { forkJoin, map } from 'rxjs';
 import { TmdbService } from '../../core/services/tmdb';
-import { VideoDisplay, VideoDto } from '../../core/models/video.model';
+import { VideoDisplay } from '../../core/models/video.model';
+import { BaseComponent } from '../../shared/classes/base-component/base-component';
 
 @Component({
   selector: 'app-making-of',
@@ -12,10 +13,9 @@ import { VideoDisplay, VideoDto } from '../../core/models/video.model';
   templateUrl: './making-of.html',
   styleUrl: './making-of.scss',
 })
-export class MakingOf implements OnInit {
+export class MakingOf extends BaseComponent implements OnInit {
   private tmdbService = inject(TmdbService);
   private sanitizer = inject(DomSanitizer);
-  private location = inject(Location);
 
   videoList = signal<VideoDisplay[]>([]);
   loading = signal(true);
@@ -89,9 +89,5 @@ export class MakingOf implements OnInit {
 
   getSafeUrl(key: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${key}`);
-  }
-
-  goBack() {
-    this.location.back();
   }
 }

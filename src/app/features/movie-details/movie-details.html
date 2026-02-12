@@ -5,48 +5,49 @@
 } @else if (movie()) {
 
 <div class="movie-header" [style.--bg-image]="'url(' + backdropUrl() + ')'">
-
-  <div class="container content-grid">
-
-    <div class="poster-wrapper">
-      <img class="main-poster" [src]="'https://image.tmdb.org/t/p/w500' + movie().poster_path" [alt]="movie().title">
-    </div>
-
-    <div class="info-wrapper">
-      <h1 class="title">
-        {{ movie().title }}
-        <span class="year">({{ movie().release_date | date:'yyyy' }})</span>
-      </h1>
-
-      <div class="facts">
-        <span class="certification">PG-13</span>
-        <span class="dot">•</span>
-        <span class="genres">
-          @for (genre of movie().genres; track genre.id; let last = $last) {
-          {{ genre.name }}{{ !last ? ', ' : '' }}
-          }
-        </span>
-        <span class="dot">•</span>
-        <span class="runtime">{{ movie().runtime }} min</span>
+  <div>
+    <div class=" content-grid">
+      <div class="poster-wrapper">
+        <img class="main-poster" [src]="'https://image.tmdb.org/t/p/w500' + movie().poster_path" [alt]="movie().title">
       </div>
+      <div class="info-wrapper">
+        <h1 class="title">
+          {{ movie().title }}
+          <span class="year">({{ movie().release_date | date:'yyyy' }})</span>
+        </h1>
 
-      <div class="actions">
-        <div class="user-score">
-          <div class="score-circle">
-            {{ (movie().vote_average * 10) | number:'1.0-0' }}<span class="percent">%</span>
+        <div class="facts">
+          <span class="certification">PG-13</span>
+          <span class="dot">•</span>
+          <span class="genres">
+            @for (genre of movie().genres; track genre.id; let last = $last) {
+            {{ genre.name }}{{ !last ? ', ' : '' }}
+            }
+          </span>
+          <span class="dot">•</span>
+          <span class="runtime">{{ movie().runtime }} min</span>
+        </div>
+
+        <div class="actions">
+          <div class="user-score">
+            <div class="score-circle">
+              {{ (movie().vote_average * 10) | number:'1.0-0' }}<span class="percent">%</span>
+            </div>
+            <span class="score-text">User<br>Score</span>
           </div>
-          <span class="score-text">User<br>Score</span>
+        </div>
+
+        <div class="tagline">{{ movie().tagline }}</div>
+
+        <div class="overview-section">
+          <h3>Overview</h3>
+          <p>{{ movie().overview }}</p>
         </div>
       </div>
-
-      <div class="tagline">{{ movie().tagline }}</div>
-
-      <div class="overview-section">
-        <h3>Overview</h3>
-        <p>{{ movie().overview }}</p>
-      </div>
     </div>
-
+    <div class="actions">
+      <a class="btn-base btn-back" (click)="goBack()">Back</a>
+    </div>
   </div>
 </div>
 
