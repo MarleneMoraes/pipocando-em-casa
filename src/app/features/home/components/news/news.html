@@ -6,37 +6,36 @@
 
       <div class="news-list">
         @for (movie of upcomingMovies(); track movie.id) {
-          <div class="news-card">
+        <div class="news-card">
 
-            <div class="news-img-wrapper">
-              <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
-                   [alt]="movie.title">
-            </div>
-
-            <div class="news-content">
-              <h5 class="news-title">
-                <a routerLink="/movie/{{movie.id}}">
-                  {{ movie.title }} | Official Release Date Announced
-                </a>
-              </h5>
-
-              <h6 class="news-meta">
-                {{ movie.release_date | date:'MM/dd/yyyy' }} | TMDB News
-              </h6>
-
-              <p class="news-text">
-                {{ movie.overview }}
-              </p>
-
-              <div class="badges-area">
-                @for (genreId of movie.genre_ids.slice(0, 2); track genreId) {
-                  <span class="badge">{{ getGenreName(genreId) }}</span>
-                }
-                <span class="badge">Coming Soon</span>
-              </div>
-            </div>
-
+          <div class="news-img-wrapper">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" [alt]="movie.title">
           </div>
+
+          <div class="news-content">
+            <h5 class="news-title">
+              <a routerLink="/movie/{{movie.id}}">
+                {{ movie.title }} | Official Release Date Announced
+              </a>
+            </h5>
+
+            <h6 class="news-meta">
+              {{ movie.release_date | date:'MM/dd/yyyy' }} | TMDB News
+            </h6>
+
+            <p class="news-text">
+              {{ movie.overview }}
+            </p>
+
+            <div class="badges-area">
+              @for (genreId of movie.genre_ids.slice(0, 2); track genreId) {
+              <span class="badge">{{ getGenreName(genreId) }}</span>
+              }
+              <span class="badge">Coming Soon</span>
+            </div>
+          </div>
+
+        </div>
         }
       </div>
 
@@ -50,20 +49,23 @@
       <div class="about-card">
         <h3>About Us</h3>
         <p>
-          <strong>Pipocando em Casa</strong> is your go-to source for movie news, streaming updates, and awards coverage.
-          Developed originally as an academic project, it has evolved into a complete movie database powered by TMDB.
+          Popcorn Time is the ultimate hub for film enthusiasts. Whether you are looking for breaking news on big-screen
+          releases, the best content dropping on streaming platforms, or comprehensive updates on major awards, we have
+          you covered.
         </p>
+
         <p>
-          Version 2.0 (2026) brings a completely revamped interface using Angular 21, Signals, and pure CSS, leaving legacy frameworks behind.
+          <b>Your cinema connection, redefined.</b> Popcorn Time brings you a experience connecting you to
+          everything happening in the movie world. Discover, watch, and discuss with us.
         </p>
 
         <hr>
 
         <h3>Editorial Team</h3>
         <div class="team-list">
-          <p><i class="user-icon">👤</i> <b>Editor:</b> Marlene Vasconcelos</p>
-          <p><i class="user-icon">👤</i> <b>Research:</b> Marlene Moraes</p>
-          <p><i class="user-icon">👤</i> <b>General Manager:</b> Marlene Oliveira</p>
+          <p><span class="material-icons">account_circle</span> <b>Editor:</b> Marlene Vasconcelos</p>
+          <p><span class="material-icons">account_circle</span> <b>Research:</b> Marlene Moraes</p>
+          <p><span class="material-icons">account_circle</span> <b>General Manager:</b> Marlene Oliveira</p>
         </div>
 
         <div class="social-links">
