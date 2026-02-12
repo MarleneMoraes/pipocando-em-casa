@@ -1,0 +1,112 @@
+@use 'variables' as *;
+
+.movie-list-section {
+  padding: 40px 20px;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--ff-title);
+  color: var(--color-title);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  border-left: 5px solid var(--color-accent);
+  padding-left: 15px;
+}
+
+.filters-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  .custom-select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--gray);
+    min-width: 200px;
+    font-family: var(--ff-text);
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.movie-card {
+  background: var(--light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .poster {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+
+    .card-title {
+      font-family: var(--ff-title);
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--color-accent);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--dark-gray);
+      line-height: 1.5;
+    }
+  }
+}
+
+.actions-footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-back {
+  padding: 10px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 50px;
+  color: var(--dark-gray);
+}
