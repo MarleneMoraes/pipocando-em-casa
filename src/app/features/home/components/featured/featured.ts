@@ -1,49 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { MovieDto } from '../../../../core/models/movie.model';
-import { GenreDto } from '../../../../core/models/genre.model';
-import { TmdbService } from '../../../../core/services/tmdb';
+import { Component } from '@angular/core';
+import { GenreFilter } from '../../../../shared/components/genre-filter/genre-filter';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-featured',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterLink, GenreFilter],
   templateUrl: './featured.html',
   styleUrl: './featured.scss',
 })
-export class Featured implements OnInit {
-  private tmdbService = inject(TmdbService);
-
-  movies = signal<MovieDto[]>([]);
-  genres = signal<GenreDto[]>([]);
-
-  selectedGenreId = signal<string>('');
-
-  ngOnInit(): void {
-    this.loadGenres();
-    this.loadMovies();
-  }
-
-  loadGenres() {
-    this.tmdbService.getGenres().subscribe({
-      next: (res) => this.genres.set(res.genres),
-      error: (e) => console.error(e)
-    });
-  }
-
-  loadMovies() {
-    this.tmdbService.getMoviesByGenre(this.selectedGenreId()).subscribe({
-      next: (res) => {
-        this.movies.set(res.results.slice(0, 4));
-      },
-      error: (e) => console.error(e)
-    });
-  }
-
-  onGenreChange() {
-    this.loadMovies();
-  }
-
-}
+export class Featured { }

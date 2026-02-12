@@ -1,0 +1,38 @@
+<div class="header-area">
+  @if (showTitle) {
+    <h2 class="section-title-dark">Featured Movies</h2>
+  } @else {
+    <div></div>
+  }
+
+  <select id="theme"
+    class="custom-select"
+    [(ngModel)]="selectedGenreId"
+    (change)="onGenreChange()">
+
+    <option value="" selected>Category: ALL</option>
+
+    @for (genre of genres(); track genre.id) {
+      <option [value]="genre.id">{{ genre.name }}</option>
+    }
+  </select>
+</div>
+
+<div class="movies-grid">
+  @for (movie of movies(); track movie.id) {
+  <div class="movie-item">
+
+    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+    class="movie-poster"
+    [alt]="movie.title">
+
+    <div class="movie-info">
+      <h4 class="movie-title">{{ movie.title }}</h4>
+      <p class="movie-description">
+        {{ movie.overview }}
+      </p>
+    </div>
+
+  </div>
+  }
+</div>

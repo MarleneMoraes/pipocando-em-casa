@@ -1,0 +1,79 @@
+@use 'variables';
+@use 'mixins' as *;
+
+:host {
+  @include section-container;
+}
+
+.header-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.custom-select {
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 1px solid var(--light);
+  min-width: 200px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+}
+
+.movies-grid {
+  @include responsive-grid(200px, 30px);
+
+  &.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-only {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.movie-poster {
+  width: 100%;
+  //height: auto;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  @include hover-scale;
+}
+
+.movie-title {
+  font-family: var(--ff-title);
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  @include text-clamp(4);
+}
