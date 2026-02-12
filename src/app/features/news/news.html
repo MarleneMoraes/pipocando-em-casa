@@ -1,0 +1,51 @@
+<section class="section">
+  <div class="container">
+
+    <div class="header-area mb-5">
+      <h2 class="section-title-dark">Upcoming Releases</h2>
+    </div>
+
+    @if (loading()) {
+    <div class="loading-state">
+      <p>Loading upcoming movies...</p>
+    </div>
+    } @else {
+    <div class="news-list">
+      @for (movie of upcomingMovies(); track movie.id) {
+      <article class="news-card">
+
+        <div class="news-image-wrapper">
+          <img [src]="getImageUrl(movie)" [alt]="movie.title" class="news-img">
+        </div>
+
+        <div class="news-content">
+          <h3 class="news-title">
+            <a [routerLink]="['/movie', movie.id]">{{ movie.title }}</a>
+          </h3>
+
+          <div class="news-meta">
+            <span>{{ movie.release_date | date:'MM/dd/yyyy' }}</span>
+            <span class="separator">|</span>
+            <span class="source-note">TMDB Official</span>
+          </div>
+
+          <div class="news-body">
+            <p>{{ movie.overview | slice:0:250 }}...</p>
+
+          </div>
+
+          <div class="badges-area">
+            @for (genreId of movie.genre_ids.slice(0, 3); track genreId) {
+            <span class="badge">{{ getGenreName(genreId) }}</span>
+            }
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+    }
+    <div class="actions">
+      <a class="btn-base btn-back" (click)="goBack()">Back</a>
+    </div>
+  </div>
+</section>
