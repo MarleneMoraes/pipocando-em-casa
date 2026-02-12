@@ -92,23 +92,7 @@ p {
   margin-bottom: 20px;
 }
 
-.badges-area {
-  margin-top: auto;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
 
-  .badge {
-    background-color: var(--gray);
-    color: var(--dark-gray);
-    padding: 4px 10px;
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-}
 
 // about section
 .about-card {

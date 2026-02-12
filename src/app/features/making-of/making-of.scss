@@ -1,36 +1,5 @@
 @use 'variables';
 
-.section {
-  padding: 40px 0;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-}
-
-.header-area {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.group-title {
-  font-family: var(--ff-title);
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: var(--color-title);
-
-  border-left: 5px solid var(--color-accent);
-  padding-left: 15px;
-  line-height: 1.2;
-}
-
 .video-card {
   display: grid;
   grid-template-columns: 350px 1fr;

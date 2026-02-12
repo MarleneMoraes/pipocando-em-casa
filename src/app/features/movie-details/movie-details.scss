@@ -1,16 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.loading-container,
-.container {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-title);
-}
-
 .movie-header {
   position: relative;
   min-height: 80vh;
