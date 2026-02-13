@@ -27,8 +27,3 @@ export interface ReviewItem {
   review: ReviewDto;
   movieTitle: string;
 }
-
-export interface ReviewPageItem {
-  review: ReviewDto;
-  movieTitle: string;
-}

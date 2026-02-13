@@ -1,0 +1,81 @@
+.movie-sheet-card {
+  margin-bottom: 2rem;
+
+  .sheet-content {
+    display: flex;
+    gap: 30px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+
+  .poster-col img {
+    width: 160px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .info-col {
+    flex: 1;
+
+    .movie-title {
+      font-family: var(--ff-title);
+      font-size: 1.6rem;
+      color: var(--color-title);
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .meta-line {
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .credits-line {
+      font-size: 0.95rem;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+      p { margin-bottom: 4px; }
+    }
+
+    .overview-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .badge-netflix {
+      background-color: var(color-accent);
+      color: var(--light);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .ratings-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .rating-box {
+      .rating-label {
+        display: block;
+        font-weight: bold;
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+        color: var(--color-title);
+      }
+    }
+  }
+}

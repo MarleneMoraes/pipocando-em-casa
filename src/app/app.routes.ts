@@ -8,6 +8,7 @@ import { News } from './features/news/news';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'featured', component: Featured},
+  { path: 'reviews', component: Reviews},
   { path: 'making-of', component: MakingOf},
   { path: 'news', component: News},
   {

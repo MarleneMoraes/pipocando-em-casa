@@ -1,0 +1,50 @@
+<section class="section">
+  <div class="container">
+
+    <div class="header-area mb-5">
+      <h2 class="section-title-dark">Reviews</h2>
+    </div>
+
+    @if (loading()) {
+      <div class="loading-state">
+        <p>Loading content...</p>
+      </div>
+    } @else {
+
+      <div class="content-layout">
+
+        <article class="main-column">
+          @for (sheet of movieSheets(); track sheet.movie.id) {
+
+            <app-movie-sheet-card
+              [sheet]="sheet"
+            >
+            </app-movie-sheet-card>
+
+            <hr class="separator">
+          }
+        </article>
+
+        <aside class="sidebar-column">
+          <h2 class="sidebar-title">Audience Reviews</h2>
+
+          @for (item of sidebarReviews(); track item.review.author) {
+            <div class="side-item">
+              <app-review-card
+                [review]="item.review"
+                [movieTitle]="item.movieTitle"
+              >
+              </app-review-card>
+            </div>
+          }
+        </aside>
+
+      </div>
+    }
+
+    <div class="actions">
+      <a class="btn-base btn-back" (click)="goBack()">Back</a>
+    </div>
+  </div>
+
+</section>

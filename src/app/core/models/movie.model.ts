@@ -15,3 +15,13 @@ export interface TmdbResponse {
   total_pages: number;
   total_results: number;
 }
+
+export interface MovieTechSheet {
+  movie: MovieDto;
+  posterUrl: string;
+  year: string;
+  director: string;
+  writer: string;
+  genreNames: string;
+  popcornRating: number;
+}

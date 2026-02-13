@@ -1,0 +1,41 @@
+<div class="movie-sheet-card">
+
+  <div class="sheet-content">
+    <div class="poster-col">
+      <img [src]="sheet.posterUrl" [alt]="sheet.movie.title">
+    </div>
+
+    <div class="info-col">
+      <h3 class="movie-title">{{ sheet.movie.title }}</h3>
+
+      <div class="meta-line">
+        <span>{{ sheet.year }}</span> |
+        <span>{{ sheet.genreNames }}</span>
+      </div>
+
+      <div class="credits-line">
+        <p><strong>Direction:</strong> {{ sheet.director }}</p>
+        <p><strong>Screenplay:</strong> {{ sheet.writer }}</p>
+      </div>
+
+      <p class="overview-text">
+        {{ sheet.movie.overview }}
+      </p>
+
+      <span class="badge-netflix">Streaming</span>
+
+      <div class="ratings-footer">
+        <div class="rating-box">
+          <span class="rating-label">Popcorn Rating</span>
+          <app-star-rating [rating]="sheet.popcornRating"></app-star-rating>
+        </div>
+
+        <div class="rating-box">
+          <span class="rating-label">Audience Rating</span>
+          <app-star-rating [rating]="sheet.movie.vote_average / 2"></app-star-rating>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

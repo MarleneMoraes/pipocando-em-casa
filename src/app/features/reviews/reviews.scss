@@ -1,0 +1,48 @@
+@use 'variables';
+@use 'mixins' as *;
+
+.header-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 4rem;
+  align-items: start;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.separator {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.sidebar-column {
+  .sidebar-title {
+    font-family: var(--ff-title);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--color-title);
+  }
+
+  .side-item {
+    margin-bottom: 2rem;
+  }
+}
+
+.loading-state {
+  text-align: center;
+  padding: 5rem;
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+}
+
