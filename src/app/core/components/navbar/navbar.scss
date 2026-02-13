@@ -1,22 +1,23 @@
-@mixin interactive-states {
-  transition: all 0.3s ease;
+@use 'variables';
 
-  &:hover {
-    background-color: var(--color-hover);
-    color: var(--light);
-  }
-
-  &:active {
-    background-color: var(--color-active);
-    color: var(--light);
-  }
-}
-
-.navbar {
+:host {
+  display: block;
   position: sticky;
   top: 0;
   z-index: 1000;
-  color: var(--light);
+  width: 100%;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+  height: 64px;
 }
 
 .brand {
@@ -25,6 +26,7 @@
   text-decoration: none;
   color: inherit;
   gap: 10px;
+  white-space: nowrap;
 
   .brand-text {
     font-family: var(--ff-title);
@@ -37,48 +39,95 @@
   flex: 1 1 auto;
 }
 
-.menu-items {
+.desktop-menu {
   display: none;
 
   @media (min-width: 992px) {
     display: flex;
     gap: 8px;
+    align-items: center;
   }
 
   a {
     color: var(--light);
-    text-decoration: none;
     font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-    }
 
     &.active-link {
-      background-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+.desktop-search {
+  display: none;
+
+  @media (min-width: 992px) {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+  }
+}
+
+// mobile button
+.mobile-menu-btn {
+  display: block;
+  color: var(--light);
+  margin-left: auto;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.mobile-menu-container {
+  background-color: var(--color-accent);
+  padding: 20px;
+  position: absolute;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 999;
+
+  animation: slideDown 0.3s ease-out;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  a {
+    color: var(--light);
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 10px;
+
+    &.active-link {
+      background-color: rgba(255, 255, 255, 0.1);
       font-weight: bold;
     }
   }
 }
 
-.mobile-menu-btn {
-  color: var(--light);
-  display: block;
+.mobile-search {
+  width: 100%;
 
-  @media (min-width: 992px) {
-    display: none !important;
+  .full-width {
+    width: 100%;
   }
 }
 
-.search-container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin-left: 16px;
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .search-form {
@@ -86,43 +135,39 @@
   padding: 0;
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
 .search-field {
-  width: 250px;
   font-size: 14px;
+  &:not(.full-width) {
+     width: 250px;
+  }
 }
 
 // material overrides
-/* 1. Esconde a borda original "quebrada" do Material */
 ::ng-deep .search-field .mdc-notched-outline__leading,
 ::ng-deep .search-field .mdc-notched-outline__notch,
 ::ng-deep .search-field .mdc-notched-outline__trailing {
-  border: none !important; /* Tchau borda nativa */
+  border: none !important;
 }
 
-/* 2. Cria a nossa borda personalizada no Wrapper */
 ::ng-deep .search-field .mat-mdc-text-field-wrapper {
   height: 36px !important;
   padding: 0 8px !important;
 
-  /* AQUI DESENHAMOS A NOVA BORDA */
   border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 4px; /* Arredondamento da borda */
+  border-radius: 4px;
 
   display: flex;
   align-items: center;
   transition: border-color 0.3s ease;
 }
 
-/* Efeito de Foco na borda */
 ::ng-deep .search-field.mat-focused .mat-mdc-text-field-wrapper {
-  border-color: #fff; /* Fica branco total ao focar */
-  border-width: 2px;  /* Fica mais grossa ao focar (opcional) */
+  border-color: var(--light);
+  border-width: 2px;
 }
 
-/* --- AJUSTES INTERNOS (Infix, Input, Icon) --- */
 ::ng-deep .search-field .mat-mdc-form-field-infix {
   padding: 0 !important;
   min-height: unset !important;
@@ -137,7 +182,7 @@
   position: relative;
   top: 0 !important;
   transform: translateY(1px);
-  caret-color: #fff; /* Cor do cursor piscando */
+  caret-color: var(--light);
 }
 
 ::ng-deep .search-field .mat-mdc-form-field-icon-suffix {

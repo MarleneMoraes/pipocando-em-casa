@@ -6,7 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -34,12 +35,26 @@ export class Navbar {
   ];
 
   searchTerm = signal('');
+  isMobileMenuOpen = signal(false);
   private router = inject(Router);
+
+  constructor() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.isMobileMenuOpen.set(false);
+    });
+  }
 
   onSearch() {
     if (this.searchTerm().trim()) {
       this.router.navigate(['/search', this.searchTerm()]);
+      this.isMobileMenuOpen.set(false);
     }
     this.searchTerm.set('');
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen.update(value => !value);
   }
 }

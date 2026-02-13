@@ -1,38 +1,64 @@
 <mat-toolbar color="primary" class="navbar">
-  <a routerLink="/" class="brand">
-    <img src="assets/images/logo.png" alt="popcorn logo" width="40">
-    <span class="brand-text">Popcorn Time</span>
-  </a>
-
-  <span class="spacer"></span>
-
-  <div class="menu-items">
-    @for (item of menuItems; track item.label) {
-    <a mat-button
-      [routerLink]="item.link"
-      routerLinkActive="active-link"
-      [routerLinkActiveOptions]="{exact: item.exact || false}">
-      {{ item.label }}
+  <div class="container navbar-content"> <a routerLink="/" class="brand">
+      <img src="assets/images/logo.png" alt="popcorn logo" width="40">
+      <span class="brand-text">Popcorn Time</span>
     </a>
-    }
+
+    <span class="spacer"></span>
+
+    <div class="desktop-menu">
+      @for (item of menuItems; track item.label) {
+      <a mat-button
+        [routerLink]="item.link"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact: item.exact || false}">
+        {{ item.label }}
+      </a>
+      }
+    </div>
+
+    <div class="search-container desktop-search">
+      <form class="search-form" (submit)="onSearch()">
+        <mat-form-field appearance="outline" class="search-field" subscriptSizing="dynamic">
+          <mat-label>Search movies</mat-label>
+          <input matInput type="search" [(ngModel)]="searchTerm" name="search">
+          <button matSuffix mat-icon-button class="btn-search" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
+    </div>
+
+    <button mat-icon-button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <mat-icon>{{ isMobileMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
   </div>
-
-  <div class="search-container">
-    <form class="search-form" (submit)="onSearch()">
-
-      <mat-form-field appearance="outline" class="search-field" subscriptSizing="dynamic">
-        <mat-label>Search movies</mat-label>
-        <input matInput type="search" [(ngModel)]="searchTerm" name="search">
-
-        <button matSuffix mat-icon-button class="btn-search" type="submit">
-          <mat-icon>search</mat-icon>
-        </button>
-      </mat-form-field>
-
-    </form>
-  </div>
-
-  <button mat-icon-button class="mobile-menu-btn">
-    <mat-icon>menu</mat-icon>
-  </button>
 </mat-toolbar>
+
+@if (isMobileMenuOpen()) {
+  <div class="mobile-menu-container">
+    <div class="mobile-nav-links">
+      @for (item of menuItems; track item.label) {
+        <a mat-button
+           [routerLink]="item.link"
+           routerLinkActive="active-link"
+           [routerLinkActiveOptions]="{exact: item.exact || false}">
+          {{ item.label }}
+        </a>
+      }
+    </div>
+
+    <div class="mobile-search">
+      <form class="search-form" (submit)="onSearch()">
+        <mat-form-field appearance="outline" class="search-field full-width" subscriptSizing="dynamic">
+          <mat-label>Search movies</mat-label>
+          <input matInput type="search" [(ngModel)]="searchTerm" name="searchMobile">
+          <button matSuffix mat-icon-button class="btn-search" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+}
