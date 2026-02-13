@@ -1,7 +1,10 @@
 @use '@angular/material' as mat;
-@use 'variables';
-@use 'mixins';
-@use 'components';
+@use 'assets/styles/variables';
+@use 'assets/styles/components';
+@use 'assets/styles/mixins';
+//@use 'variables';
+//@use 'components';
+//@use 'mixins';
 
 * {
   margin: 0;
@@ -76,21 +79,29 @@ select {
 }
 
 .section-title-dark {
-  font-size: 2rem;
+  @include mixins.border-title(var(--color-accent), 2rem);
   font-weight: bold;
   margin-bottom: 40px;
-  border-left: 5px solid var(--color-accent);
-  padding-left: 15px;
-  line-height: 1.2;
 }
 
-.btn-base {
-  background-color: var(--color-accent);
-  color: var(--light);
+%btn-structure {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
   transition:
     background 0.3s,
     transform 0.2s;
-  cursor: pointer;
+  font-family: inherit;
+  border: none; // Garantia para tags <button>
+}
+
+.btn-base {
+  @extend %btn-structure;
+  background-color: var(--color-accent);
+  color: var(--light);
 
   &:hover {
     background-color: var(--color-hover);
@@ -99,6 +110,12 @@ select {
   &:active {
     background-color: var(--color-active);
   }
+}
+
+.btn-search,
+.btn-back,
+.btn-more {
+  @extend .btn-base;
 }
 
 .badges-area {
@@ -124,27 +141,11 @@ select {
   color: var(--light);
 }
 
-.btn-search,
-.btn-back,
-.btn-more {
-  @extend .btn-base;
-}
-
 .actions {
   display: flex;
   justify-content: flex-end;
   margin-top: 30px;
   width: 100%;
-}
-
-.btn-more,
-.btn-back {
-  @extend .btn-base;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: bold;
-  display: inline-block;
 }
 
 .navbar {

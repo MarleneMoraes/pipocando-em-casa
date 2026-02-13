@@ -1,4 +1,7 @@
-@use 'variables' as *;
+@use '../../../assets/styles/variables';
+@use '../../../assets/styles/mixins';
+//@use 'variables';
+//@use 'mixins';
 
 .movie-list-section {
   padding: 40px 20px;
@@ -12,12 +15,9 @@
 }
 
 .section-title {
-  font-family: var(--ff-title);
-  color: var(--color-title);
-  font-size: 2.5rem;
+  @include mixins.border-title(var(--color-title), 2.5rem);
   margin-bottom: 30px;
   border-left: 5px solid var(--color-accent);
-  padding-left: 15px;
 }
 
 .filters-bar {

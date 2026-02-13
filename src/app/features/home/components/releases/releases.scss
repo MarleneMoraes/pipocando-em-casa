@@ -1,13 +1,15 @@
-@use 'variables';
-@use 'mixins' as *;
-@use 'components' as comp;
+@use '../../../../../assets/styles/variables';
+@use '../../../../../assets/styles/mixins';
 
 .releases-section, .section {
   min-height: calc(100vh - 64px);
   background-color: var(--color-accent);
 
-  @include flex-center;
+  @include mixins.flex-center;
   padding: 20px;
+}
 
-  @include comp.movie-showcase-component;
+.section-title {
+  @include mixins.border-title(var(--color-active), 2.5rem);
+  color: var(--light);
 }

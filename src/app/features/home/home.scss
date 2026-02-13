@@ -1,6 +1,5 @@
 @use 'variables';
 @use 'mixins' as *;
-@use 'components' as comp;
 
 .releases-section {
   width: 100%;
@@ -8,6 +7,4 @@
   background-color: var(--color-accent);
   @include flex-center;
   padding: 20px;
-
-  @include comp.movie-showcase-component;
 }
